@@ -15,6 +15,9 @@ function Header() {
             <li>
                 <NavLink to='/default'>Default</NavLink>
             </li>
+            <li>
+                <NavLink to='/test'>Test</NavLink>
+            </li>
         </ul>
     )
 }
