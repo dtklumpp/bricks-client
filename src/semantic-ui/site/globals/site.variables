@@ -3,4 +3,3 @@
 *******************************/
 
 @primaryColor: @pink;
-@pageBackground: #eff0f1;
