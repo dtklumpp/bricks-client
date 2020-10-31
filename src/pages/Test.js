@@ -1,10 +1,15 @@
 import {useState} from 'react';
 import {useEffect} from 'react';
 
-import { Button } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react';
 // import { Accordion, Icon } from 'semantic-ui-react'
 
-import { Progress } from 'semantic-ui-react'
+import { Progress } from 'semantic-ui-react';
+import { Grid, Segment, Image } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
+
+import { Divider, Header, Menu, Message, Table } from 'semantic-ui-react'
+
 
 import AccordianExampleStandard from '../components/Accordian';
 
@@ -33,7 +38,7 @@ function Test() {
         .then(json => console.log(json));
     }
 
-    return ( <>
+    return ( <> <Container>
         <h3>Test Page here-Ooho</h3>
         <h4>var1 is {var1}</h4>
         <button onClick={increaseVar1}>change</button><br/>
@@ -75,10 +80,109 @@ function Test() {
     <Progress percent={11} />
 
 
+
+
     {/* <div class="ui progress" data-percent="11"><div class="bar" ></div></div> */}
+    <br/>
+    <hr/>
+    <br/>
+    <Grid columns='equal' stackable>
+    <Grid.Column>
+      <Segment>1</Segment>
+    </Grid.Column>
+    <Grid.Column width={8}>
+      <Segment>2</Segment>
+    </Grid.Column>
+    <Grid.Column>
+      <Segment>3</Segment>
+    </Grid.Column>
+  </Grid>
+
+  <Grid>
+    <Grid.Column width={4}>
+      <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
+    </Grid.Column>
+    <Grid.Column width={9}>
+      <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+    </Grid.Column>
+    <Grid.Column width={3}>
+      <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
+    </Grid.Column>
+  </Grid>
+
+  <br/>
+    <hr/>
+    <br/>
+
+  <Grid stackable doubling celled columns={"equal"}>
+      <Grid.Column>1</Grid.Column>
+      <Grid.Column>2</Grid.Column>
+      <Grid.Column>3</Grid.Column>
+      <Grid.Column>4</Grid.Column>
+      <Grid.Column>5</Grid.Column>
+      <Grid.Column>6</Grid.Column>
+      <Grid.Column>7</Grid.Column>
+      <Grid.Column>8</Grid.Column>
+      <Grid.Column>9</Grid.Column>
+      <Grid.Column>10</Grid.Column>
+      <Grid.Column>11</Grid.Column>
+      <Grid.Column>12</Grid.Column>
+      <Grid.Column>13</Grid.Column>
+  </Grid>
+
+    <br/>
+    <hr/>
+    <br/>
+
+    <div className="ui grid stackable doubling celled">
+        <div className="four wide column">One</div>
+        <div className="four wide column">Two</div>
+        <div className="four wide column">Three</div>
+        <div className="four wide column">Four</div>
+    </div>
+
+    <br/>
+    <hr/>
+    <br/>
 
 
+    <Divider section />
 
+      <Menu attached='top' compact inverted widths={3}>
+        <Menu.Item as='a'>Item</Menu.Item>
+        <Menu.Item as='a'>Item</Menu.Item>
+        <Menu.Item as='a'>Item</Menu.Item>
+      </Menu>
+      <Table attached inverted>
+        <Table.Header>
+          <Table.HeaderCell>Header</Table.HeaderCell>
+          <Table.HeaderCell>Header</Table.HeaderCell>
+          <Table.HeaderCell>Header</Table.HeaderCell>
+        </Table.Header>
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table>
+      <Segment attached='bottom' inverted>
+        Segment
+      </Segment>
+
+
+  </Container>
     </>
     )
 }

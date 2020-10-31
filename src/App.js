@@ -3,11 +3,17 @@ import './App.css';
 import Routes from './config/Routes';
 import Header from './components/Header';
 
+import { Container } from 'semantic-ui-react';
+
+
 function App() {
   return (
     <>
-      <Header/>
-      <Routes/>
+      {/* <Container> */}
+        <Header/>
+        
+        <Routes/>
+      {/* </Container> */}
     </>
   )
 }
