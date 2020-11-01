@@ -7,6 +7,11 @@ import {Container} from 'semantic-ui-react';
 
 import LineChartSample from '../components/recharts/LineChart';
 
+import { Resizable, ResizableBox } from 'react-resizable';
+
+import './Resizable.css';
+
+
 export default Visx;
 
 function Visx() {
@@ -19,5 +24,15 @@ function Visx() {
         <hr/>
         <br/>
         <LineChartSample/>
+        <br/>
+        <hr/>
+        <br/>
+        <ResizableBox width={200} height={200} 
+            minConstraints={[100, 100]} maxConstraints={[300, 300]}>
+            <span>Contents</span>
+        </ResizableBox>
+        <br/>
+        <hr/>
+        <br/>
     </>)
 }
