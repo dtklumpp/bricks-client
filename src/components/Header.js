@@ -46,6 +46,12 @@ function Header() {
                     <li>
                         <NavLink to='/visx'>Visx</NavLink>
                     </li>
+                    <li>
+                        <NavLink to='/template'>Template</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/treact'>Treact</NavLink>
+                    </li>
                 </ul>
             </Grid.Column>
 

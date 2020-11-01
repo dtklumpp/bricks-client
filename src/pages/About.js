@@ -35,8 +35,6 @@ function onChange(a, b, c) {
 function About() {
     return (<>
         <h3>About Page here</h3>
-        <SimpleSlider/>
-        {/* <SimpleSlider2/> */}
 
         <br/>
         <hr/>
@@ -115,6 +113,8 @@ function About() {
 <hr/>
 <br/>
 
+<SimpleSlider/>
+        {/* <SimpleSlider2/> */}
 
 
 <br/>
