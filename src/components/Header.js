@@ -41,6 +41,13 @@ function Header() {
                     </li>
                 </ul>
             </Grid.Column>
+            <Grid.Column width={1}>
+                <ul>
+                    <li>
+                        <NavLink to='/visx'>Visx</NavLink>
+                    </li>
+                </ul>
+            </Grid.Column>
 
         </Grid>
         <MenuInverted/>

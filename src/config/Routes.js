@@ -6,6 +6,7 @@ import Cats from '../pages/Cats';
 import Leaders from '../pages/Leaders';
 import Map from '../pages/Map';
 import Project from '../pages/Project';
+import Visx from '../pages/Visx';
 
 import Default from '../components/default/default';
 export default Routes;
@@ -20,5 +21,6 @@ function Routes() {
         <Route path='/leaders' component={Leaders}/>
         <Route path='/map' component={Map}/>
         <Route path='/project' component={Project}/>
+        <Route path='/visx' component={Visx}/>
     </Switch>
 }
