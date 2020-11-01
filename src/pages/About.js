@@ -6,13 +6,15 @@ import 'antd/dist/antd.css';
 // import './About.css';
 
 import SimpleSlider from '../components/testing/Carousel';
-import SimpleSlider2 from '../components/testing/SimpleSlider';
+// import SimpleSlider2 from '../components/testing/SimpleSlider';
 
 import { DatePicker } from 'antd';
 import { Carousel } from 'antd';
 
 import {Container} from 'semantic-ui-react';
 import {Grid} from "semantic-ui-react";
+
+import SortableComponent from '../components/testing/SortableComponent';
 
 
 export default About;
@@ -101,7 +103,7 @@ function About() {
 <hr/>
 <br/>
 
-
+        <SortableComponent/>
 
 <br/>
 <hr/>
