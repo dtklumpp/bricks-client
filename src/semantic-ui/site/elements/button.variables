@@ -2,5 +2,5 @@
     User Variable Overrides
 *******************************/
 
-@primaryColor: #34D0EE;
+@primaryColor: #34C0EE;
 @secondaryColor: #D90A0F;
