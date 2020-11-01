@@ -10,7 +10,7 @@ export default Visx;
 function Visx() {
     return (<>
         <Container>
-            <Example width={1000} height={500} />
+            <Example width={1000} height={500} events={true}/>
         </Container>
         {/* <ParentSize>{({ width, height }) => <Example width={width} height={height} />}</ParentSize> */}
     </>)
