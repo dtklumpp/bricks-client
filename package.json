@@ -19,6 +19,7 @@
     "react-scripts-ts": "^3.1.0",
     "react-slick": "^0.27.12",
     "react-sortable-hoc": "^1.11.0",
+    "recharts": "^1.8.5",
     "semantic-ui-react": "^2.0.1",
     "slick-carousel": "^1.8.1",
     "topojson-client": "^3.1.0",

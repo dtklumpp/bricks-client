@@ -5,6 +5,8 @@ import '../components/visx/sandbox-styles.css';
 
 import {Container} from 'semantic-ui-react';
 
+import LineChartSample from '../components/recharts/LineChart';
+
 export default Visx;
 
 function Visx() {
@@ -13,5 +15,9 @@ function Visx() {
             <Example width={1000} height={500} events={true}/>
         </Container>
         {/* <ParentSize>{({ width, height }) => <Example width={width} height={height} />}</ParentSize> */}
+        <br/>
+        <hr/>
+        <br/>
+        <LineChartSample/>
     </>)
 }
