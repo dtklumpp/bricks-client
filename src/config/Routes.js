@@ -9,6 +9,7 @@ import Project from '../pages/Project';
 import Visx from '../pages/Visx';
 import Template from '../pages/Template';
 import TreactPage from '../pages/Treact';
+import Crud from '../pages/CRUD';
 
 import Default from '../components/default/default';
 export default Routes;
@@ -26,5 +27,6 @@ function Routes() {
         <Route path='/visx' component={Visx}/>
         <Route path='/template' component={Template}/>
         <Route path='/treact' component={TreactPage}/>
+        <Route path='/crud' component={Crud}/>
     </Switch>
 }
