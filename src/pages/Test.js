@@ -38,6 +38,8 @@ const paragraph = <ImageComponent src='https://react.semantic-ui.com/images/wire
 function Test() {
 
     const URL = "http://localhost:8000/home/"
+    const URL2 = "http://localhost:8000/homer/"
+
 
     const [var1, setVar1] = useState(5);
     const [fetch1, setFetch1] = useState(4);
@@ -56,11 +58,26 @@ function Test() {
         .then(json => console.log(json));
     }
 
+    const msg = {message: "ahoy-hoy"};
+
+    function sendIt() {
+        fetch(URL2, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(msg),
+        })
+        .then(res => res.json())
+        .then(json => console.log(json));
+    }
+
     return ( <> <Container>
         <h3>Test Page here-Ooho</h3>
         <h4>var1 is {var1}</h4>
-        <button onClick={increaseVar1}>change</button><br/>
-        <button onClick={fetchReply}>fetchit</button>
+        <button onClick={increaseVar1} className={"ui button"}>change</button><br/>
+        <button onClick={fetchReply} className={"ui button"}>fetchit</button><br/>
+        <button onClick={sendIt} className={"ui button"}>sendit</button><br/>
         <h4>fetch1 is {fetch1}</h4>
         <br/>
         <button class="ui button">Click Here</button>
