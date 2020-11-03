@@ -16,6 +16,8 @@ function Crud() {
     const URL2 = "http://localhost:8000/homer/"
     const URL3 = "http://localhost:8000/projects/"
     const URL4 = "http://localhost:8000/projects/create"
+    const URL5 = "http://localhost:8000/projects/delete"
+
 
     const [var1, setVar1] = useState(5);
     const [fetch1, setFetch1] = useState(4);
@@ -71,7 +73,7 @@ function Crud() {
                             <Header as="h3" key={project.id}>{project.name}</Header>
                         </Grid.Column>
                         <Grid.Column width={3}>
-                            <button onClick={removeIt} className={"ui button secondary"}>X</button>
+                            <button onClick={removeIt} className={"ui button secondary"} value={project.id}>X</button>
                         </Grid.Column>
                     </Grid>
                 </Segment>
@@ -96,8 +98,13 @@ function Crud() {
         .then(json => console.log(json));
     }
 
-    function removeIt(){
-
+    function removeIt(event){
+        fetch(URL5+"/"+event.target.value)
+        .then(res => res.json())
+        .then(json => {
+            console.log(json);
+            getProjects();
+        })
     }
 
 
