@@ -11,6 +11,8 @@ import {Form} from 'semantic-ui-react';
 import {Divider} from 'semantic-ui-react';
 import {Container} from 'semantic-ui-react';
 
+import { DatePicker } from 'antd';
+
 
 export default Crud;
 
@@ -33,10 +35,16 @@ function Crud() {
     const [newName, setNewName] = useState("");
     const [newImage, setNewImage] = useState("");
     const [newDesc, setNewDesc] = useState("");
+    const [newCont, setNewCont] = useState("");
+    const [newGoal, setNewGoal] = useState("");
+
+
 
     const [editName, setEditName] = useState("");
     const [editImage, setEditImage] = useState("");
     const [editDesc, setEditDesc] = useState("");
+    const [editCont, setEditCont] = useState("");
+    const [editGoal, setEditGoal] = useState("");
     const [editId, setEditId] = useState("");
 
 
@@ -61,6 +69,8 @@ function Crud() {
         name: "cloneName",
         image: "cloneImage",
         description: "cloneDescription",
+        continent: "cloneCont",
+        goal: "cloneGoal",
     };
 
     function sendIt() {
@@ -120,6 +130,9 @@ function Crud() {
         cloneproj.name = newName;
         cloneproj.image = newImage;
         cloneproj.description = newDesc;
+        cloneproj.continent = newCont;
+        cloneproj.goal = newGoal;
+
         // cloneproj = {
         //     name: newName,
         //     image: newImage,
@@ -138,21 +151,26 @@ function Crud() {
             setNewName("");
             setNewImage("");
             setNewDesc("");
+            setNewCont("");
+            setNewGoal("");
             getProjects();
         })
     }
 
     function editIt(event){
-        cloneproj.name = editName;
-        cloneproj.image = editImage;
-        cloneproj.description = editDesc;
+        const editProj = {};
+        editProj.name = editName;
+        editProj.image = editImage;
+        editProj.description = editDesc;
+        editProj.continent = editCont;
+        editProj.goal = editGoal;
 
         fetch(URL6+"/"+editId, {
             method: 'PUT',
             headers: {
                 "Content-Type": "application.json",
             },
-            body: JSON.stringify(cloneproj),
+            body: JSON.stringify(editProj),
         })
         .then(res => res.json())
         .then(json => {
@@ -160,6 +178,8 @@ function Crud() {
             setEditName("");
             setEditImage("");
             setEditDesc("");
+            setEditCont("");
+            setEditGoal("");
             setEditId("");
         })
         setCanEdit(false);
@@ -187,6 +207,8 @@ function Crud() {
             setEditName(project.name);
             setEditImage(project.image);
             setEditDesc(project.description);
+            setEditCont(project.continent);
+            setEditGoal(project.goal);
             setCanEdit(true);
             getProjects();
         });
@@ -201,6 +223,26 @@ function Crud() {
             getProjects();
         })
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     return (<>
@@ -245,6 +287,27 @@ function Crud() {
                             value={newDesc}
                             onChange={(e) => setNewDesc(e.target.value)}
                         />
+                        <Form.Input
+                            icon='globe'
+                            iconPosition='left'
+                            label='Continent'
+                            placeholder='continent'
+                            value={newCont}
+                            onChange={(e) => setNewCont(e.target.value)}
+                        />
+                        <Form.Input
+                            icon='bell'
+                            iconPosition='left'
+                            label='Funding Goal $$'
+                            placeholder='goal'
+                            value={newGoal}
+                            onChange={(e) => setNewGoal(e.target.value)}
+                        />
+                        <Form.Input
+                            label='Deadline'
+                        >
+                            <DatePicker />
+                        </Form.Input>
 
                         <Button content='Create Project' primary onClick={makeIt}/>
                     </Form>

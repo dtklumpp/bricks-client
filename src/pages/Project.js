@@ -19,12 +19,17 @@ function Project(props) {
     const URL3 = "http://localhost:8000/comments/"+props.match.params.id;
     const URL4 = "http://localhost:8000/comments/create/"+props.match.params.id;
     const URL5 = "http://localhost:8000/comments/delete/";
+    const URL6 = "http://localhost:8000/projects/view/"+props.match.params.id;
+
 
     const [commentArray, setCommentArray] = useState([]);
     const [commentDisplay, setCommentDisplay] = useState("");
 
     const [newName, setNewName] = useState("");
     const [newDesc, setNewDesc] = useState("");
+
+    const [oneProject, setOneProject] = useState({});
+
 
     const newObj = {
         name: "",
@@ -33,7 +38,17 @@ function Project(props) {
     
     useEffect(function(){
         getComments();
+        getProject();
     }, [])
+
+    function getProject() {
+        fetch(URL6)
+        .then(res => res.json())
+        .then(json => {
+            setOneProject(json.data);
+            console.log('json.data:', json.data);
+        })
+    }
 
     function getComments() {
         fetch(URL3)
@@ -95,6 +110,26 @@ function Project(props) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return (<>
         
         <Grid celled>
@@ -120,7 +155,7 @@ function Project(props) {
                     </Card.Content>
                 </Card>
 
-                <Step.Group>
+                <Step.Group fluid stackable>
                     <Step>
                     <Icon name='truck' />
                     <Step.Content>
@@ -137,7 +172,7 @@ function Project(props) {
                     </Step.Content>
                     </Step>
 
-                    <Step disabled>
+                    <Step>
                     <Icon name='info' />
                     <Step.Content>
                         <Step.Title>Confirm Order</Step.Title>
@@ -146,6 +181,8 @@ function Project(props) {
                 </Step.Group>
 
                 <button onClick={getComments} className={"ui button"}>comments</button><br/>
+                <button onClick={getProject} className={"ui button"}>project</button><br/>
+
 
                 <Comment.Group>
                     <Header as='h3' dividing>

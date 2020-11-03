@@ -8,17 +8,19 @@ import { Progress } from 'semantic-ui-react';
 import { Grid, Segment, Image } from 'semantic-ui-react';
 import { Container } from 'semantic-ui-react';
 
-import { Divider, Header, Menu, Message, Table } from 'semantic-ui-react'
+import { Divider, Header, Menu, Message, Table } from 'semantic-ui-react';
 
-import { Icon } from 'semantic-ui-react'
+import { Icon } from 'semantic-ui-react';
 
-import { Input } from 'semantic-ui-react'
-import { List } from 'semantic-ui-react'
-import { Search } from 'semantic-ui-react'
-import { Step } from 'semantic-ui-react'
-import { Form } from 'semantic-ui-react'
-import { Image as ImageComponent, Item } from 'semantic-ui-react'
-import { Label } from 'semantic-ui-react'
+import { Input } from 'semantic-ui-react';
+import { List } from 'semantic-ui-react';
+import { Search } from 'semantic-ui-react';
+import { Step } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
+import { Image as ImageComponent, Item } from 'semantic-ui-react';
+import { Label } from 'semantic-ui-react';
+
+import {Modal} from 'semantic-ui-react';
 
 
 
@@ -97,6 +99,27 @@ function Test() {
         .then(res => res.json())
         .then(json => console.log(json));
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // for modal
+    const [open, setOpen] = useState(false);
+
 
     return ( <> <Container>
         <h3>Test Page here-Ooho</h3>
@@ -750,7 +773,37 @@ function Test() {
 <hr/>
 <br/>
 
-
+<Modal
+      onClose={() => setOpen(false)}
+      onOpen={() => setOpen(true)}
+      open={open}
+      trigger={<Button>Show Modal</Button>}
+    >
+      <Modal.Header>Select a Photo</Modal.Header>
+      <Modal.Content image>
+        <Image size='medium' src='/images/avatar/large/rachel.png' wrapped />
+        <Modal.Description>
+          <Header>Default Profile Image</Header>
+          <p>
+            We've found the following gravatar image associated with your e-mail
+            address.
+          </p>
+          <p>Is it okay to use this photo?</p>
+        </Modal.Description>
+      </Modal.Content>
+      <Modal.Actions>
+        <Button color='black' onClick={() => setOpen(false)}>
+          Nope
+        </Button>
+        <Button
+          content="Yep, that's me"
+          labelPosition='right'
+          icon='checkmark'
+          onClick={() => setOpen(false)}
+          positive
+        />
+      </Modal.Actions>
+    </Modal>
 
 <br/>
 <hr/>
