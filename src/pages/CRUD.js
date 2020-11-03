@@ -2,6 +2,10 @@ import {useState} from 'react';
 import {useEffect} from 'react';
 
 import { Button } from 'semantic-ui-react';
+import {Segment} from 'semantic-ui-react';
+import {Container} from 'semantic-ui-react';
+import {Grid} from 'semantic-ui-react';
+import {Header} from 'semantic-ui-react';
 
 
 export default Crud;
@@ -15,6 +19,9 @@ function Crud() {
 
     const [var1, setVar1] = useState(5);
     const [fetch1, setFetch1] = useState(4);
+
+    const [projectArray, setProjectArray] = useState([]);
+    const [projectDisplay, setProjectDisplay] = useState("");
 
     function increaseVar1() {
         setVar1(var1 + 1);
@@ -52,8 +59,30 @@ function Crud() {
     function getProjects() {
         fetch(URL3)
         .then(res => res.json())
-        .then(json => console.log(json));
+        .then(json => {
+            console.log(json);
+            setVar1(var1 + 1);
+            setProjectArray(json);
+            console.log(projectArray);
+            const displayvar = json.data.map(project => {
+                return <Segment>
+                    <Grid>
+                        <Grid.Column width={13}>
+                            <Header as="h3" key={project.id}>{project.name}</Header>
+                        </Grid.Column>
+                        <Grid.Column width={3}>
+                            <button onClick={removeIt} className={"ui button secondary"}>X</button>
+                        </Grid.Column>
+                    </Grid>
+                </Segment>
+            })
+            setProjectDisplay(displayvar);
+        });
     }
+
+    useEffect(function(){
+        console.log('projectArray:', projectArray);
+    }, [projectArray])
 
     function makeIt() {
         fetch(URL4, {
@@ -67,6 +96,10 @@ function Crud() {
         .then(json => console.log(json));
     }
 
+    function removeIt(){
+
+    }
+
 
     return (<>
         <h3>crud page</h3>        
@@ -78,6 +111,19 @@ function Crud() {
         <button onClick={makeIt} className={"ui button"}>create project</button><br/>
 
         <h4>fetch1 is {fetch1}</h4>
+
+        <br/>
+        <hr/>
+        <br/>
+
+            <Grid centered columns={3}>
+                <Grid.Column>
+                    <Header as="h2">Projects:</Header>
+                    {projectDisplay}
+                </Grid.Column>
+                <Grid.Column/>
+                <Grid.Column/>
+            </Grid>
 
     </>)
 }
