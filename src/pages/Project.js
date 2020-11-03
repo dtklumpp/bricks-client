@@ -1,21 +1,20 @@
+
 import {BreadcrumbDivider, Grid} from 'semantic-ui-react';
 import { Card, Icon, Image } from 'semantic-ui-react';
 import { Step } from 'semantic-ui-react';
+
+import { Button, Comment, Form, Header } from 'semantic-ui-react'
 
 
 import MenuVertical from '../components/MenuVertical';
 
 export default Project;
 
-function Project() {
+function Project(props) {
     return (<>
         
         <Grid celled>
             <Grid.Column width={1}>1</Grid.Column>
-            <Grid.Column width={5}>
-                <h2>5</h2>
-                <MenuVertical/>
-            </Grid.Column>
             <Grid.Column width={9}>
                 <h2>9</h2>
                 <Card>
@@ -62,12 +61,43 @@ function Project() {
                     </Step>
                 </Step.Group>
 
+
+                <Comment.Group>
+                    <Header as='h3' dividing>
+                    Comments
+                    </Header>
+
+                    <Comment>
+                    <Comment.Avatar src='/images/avatar/small/matt.jpg' />
+                    <Comment.Content>
+                        <Comment.Author as='a'>Anonymous</Comment.Author>
+                        <Comment.Text>How artistic!</Comment.Text>
+                        <Comment.Actions>
+                        </Comment.Actions>
+                    </Comment.Content>
+                    </Comment>
+
+
+                    <Form reply>
+                    <Form.TextArea />
+                    <Button content='Add Reply' labelPosition='left' icon='edit' primary />
+                    </Form>
+                </Comment.Group>
+
             </Grid.Column>
+
+
+            <Grid.Column width={5}>
+                <h2>5</h2>
+                <MenuVertical/>
+            </Grid.Column>
+
             <Grid.Column width={1}>1</Grid.Column>
 
         </Grid>
     
-
+        <h3>ahoy</h3>
+        <h3>{props.match.params.id}</h3>
 
 
     </>

@@ -23,7 +23,7 @@ function Routes() {
         <Route path='/cats' component={Cats}/>
         <Route path='/leaders' component={Leaders}/>
         <Route path='/map' component={Map}/>
-        <Route path='/project' component={Project}/>
+        <Route path='/project/:id' component={Project}/>
         <Route path='/visx' component={Visx}/>
         <Route path='/template' component={Template}/>
         <Route path='/treact' component={TreactPage}/>

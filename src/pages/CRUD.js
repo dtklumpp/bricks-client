@@ -1,6 +1,8 @@
 import {useState} from 'react';
 import {useEffect} from 'react';
 
+import {NavLink} from 'react-router-dom';
+
 import { Button } from 'semantic-ui-react';
 import {Segment} from 'semantic-ui-react';
 import {Grid} from 'semantic-ui-react';
@@ -8,6 +10,7 @@ import {Header} from 'semantic-ui-react';
 import {Form} from 'semantic-ui-react';
 import {Divider} from 'semantic-ui-react';
 import {Container} from 'semantic-ui-react';
+
 
 export default Crud;
 
@@ -83,13 +86,19 @@ function Crud() {
             const displayvar = json.data.map(project => {
                 return <Segment>
                     <Grid>
-                        <Grid.Column width={10}>
+                        <Grid.Column width={9}>
                             <Header as="h3" key={project.id}>{project.name}</Header>
                         </Grid.Column>
-                        <Grid.Column width={3}>
+
+                        <Grid.Column width={2}>
+                            <NavLink to={'/project/'+project.id} className={"ui button primary"}>Go</NavLink>
+                        </Grid.Column>
+
+
+                        <Grid.Column width={2}>
                             <button onClick={prepEdit} className={"ui button orange"} value={project.id}>edit</button>
                         </Grid.Column>
-                        <Grid.Column width={3}>
+                        <Grid.Column width={2}>
                             <button onClick={removeIt} className={"ui button secondary"} value={project.id}>X</button>
                         </Grid.Column>
                     </Grid>
@@ -287,12 +296,11 @@ function Crud() {
         <hr/>
         <br/>
 
-            <Grid centered columns={3}>
+            <Grid centered columns={2}>
                 <Grid.Column>
-                    <Header as="h2">Projects:</Header>
+                    <Header as="h2">My Projects:</Header>
                     {projectDisplay}
                 </Grid.Column>
-                <Grid.Column/>
                 <Grid.Column/>
             </Grid>
 

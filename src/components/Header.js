@@ -37,7 +37,7 @@ function Header() {
                         <NavLink to='/map'>Map</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/project'>Project</NavLink>
+                        <NavLink to='/project/1'>Project</NavLink>
                     </li>
                 </ul>
             </Grid.Column>
