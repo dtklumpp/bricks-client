@@ -3,9 +3,9 @@ import {useEffect} from 'react';
 
 import { Button } from 'semantic-ui-react';
 import {Segment} from 'semantic-ui-react';
-import {Container} from 'semantic-ui-react';
 import {Grid} from 'semantic-ui-react';
 import {Header} from 'semantic-ui-react';
+import {Form} from 'semantic-ui-react';
 
 
 export default Crud;
@@ -24,6 +24,10 @@ function Crud() {
 
     const [projectArray, setProjectArray] = useState([]);
     const [projectDisplay, setProjectDisplay] = useState("");
+
+    const [newName, setNewName] = useState("");
+    const [newImage, setNewImage] = useState("");
+    const [newDesc, setNewDesc] = useState("");
 
     function increaseVar1() {
         setVar1(var1 + 1);
@@ -86,7 +90,19 @@ function Crud() {
         console.log('projectArray:', projectArray);
     }, [projectArray])
 
+    useEffect(function(){
+        getProjects();
+    }, [])
+
     function makeIt() {
+        cloneproj.name = newName;
+        cloneproj.image = newImage;
+        cloneproj.description = newDesc;
+        // cloneproj = {
+        //     name: newName,
+        //     image: newImage,
+        //     description: newDesc,
+        // }
         fetch(URL4, {
             method: "POST",
             headers: {
@@ -95,7 +111,13 @@ function Crud() {
             body: JSON.stringify(cloneproj),
         })
         .then(res => res.json())
-        .then(json => console.log(json));
+        .then(json => {
+            console.log(json);
+            setNewName("");
+            setNewImage("");
+            setNewDesc("");
+            getProjects();
+        })
     }
 
     function removeIt(event){
@@ -116,6 +138,49 @@ function Crud() {
         <button onClick={sendIt} className={"ui button"}>sendit</button><br/>
         <button onClick={getProjects} className={"ui button"}>projects</button><br/>
         <button onClick={makeIt} className={"ui button"}>create project</button><br/>
+
+
+        <br/>
+
+        <Grid columns={2} relaxed='very' stackable>
+            <Grid.Column>
+                <Segment placeholder>
+                    <Form>
+                    <Form.Input
+                        icon='user'
+                        iconPosition='left'
+                        label='Project Name'
+                        placeholder='name'
+                        value={newName}
+                        onChange={(e) => setNewName(e.target.value)}
+                    />
+                    <Form.Input
+                        icon='save'
+                        iconPosition='left'
+                        label='Image Link'
+                        placeholder='image'
+                        value={newImage}
+                        onChange={(e) => setNewImage(e.target.value)}
+                    />
+                    <Form.Input
+                        icon='indent'
+                        iconPosition='left'
+                        label='Description'
+                        placeholder='description'
+                        value={newDesc}
+                        onChange={(e) => setNewDesc(e.target.value)}
+                    />
+
+                    <Button content='Create Project' primary onClick={makeIt}/>
+                    </Form>
+                </Segment>
+            </Grid.Column>
+            <Grid.Column></Grid.Column>
+        </Grid>
+
+        <br/>
+        <hr/>
+        <br/>
 
         <h4>fetch1 is {fetch1}</h4>
 
