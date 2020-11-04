@@ -18,3 +18,9 @@ h3.dtk {
 .dtk-tiles:hover {
     transform: scale(1.01);
 }
+
+.dtk-centered {
+    display: flex !important;
+    justify-content: center;
+}
+
