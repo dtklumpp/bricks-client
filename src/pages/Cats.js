@@ -48,7 +48,7 @@ function Cats(props) {
                         <Image src={category.image ? category.image : 'https://react.semantic-ui.com/images/wireframe/image.png'} fluid/>
                         <Rail inverted size='mini' attached internal position='left' value={category.id} name={category.id} onClick={filterProjects}>
                             {/* <Segment inverted size='big' value={category.id} name={category.id} onClick={filterProjects}>{category.name}</Segment> */}
-                            <Button size={'big'} color="orange" onClick={filterProjects} value={category.id}>{category.name}</Button>
+                            <Button size={'huge'} color="orange" onClick={filterProjects} value={category.id}>{category.name}</Button>
                         </Rail>
                     </div>
                 </Grid.Column>

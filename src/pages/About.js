@@ -56,6 +56,7 @@ function About() {
         <Grid.Column width={9}>
 
 
+
   <Carousel afterChange={onChange}>
     <div>
       <h3 style={contentStyle}>1</h3>
