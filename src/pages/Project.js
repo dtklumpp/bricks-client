@@ -46,7 +46,7 @@ function Project(props) {
     function handleItemClick(e, {name}){
         setActiveItem(name);
     }
-    handleItemClick = (e, { name }) => setActiveItem(name);
+    // handleItemClick = (e, { name }) => setActiveItem(name);
   
 
 

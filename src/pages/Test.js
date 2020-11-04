@@ -108,7 +108,7 @@ function Test() {
 
 
     function localSet() {
-        localStorage.setItem("dkf", 5);
+        localStorage.setItem("dkf", [5, 3, 2]);
     }
 
     function localGet() {
