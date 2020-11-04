@@ -6,3 +6,15 @@ h3.dtk {
     background-color: chartreuse;
     color: red;
 }
+
+.dtk {
+    position: relative;
+}
+
+.dtk-tiles {
+    box-shadow: 0 6px 6px rgba(0,0,0,0.4);
+}
+
+.dtk-tiles:hover {
+    transform: scale(1.01);
+}

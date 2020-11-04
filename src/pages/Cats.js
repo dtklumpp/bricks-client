@@ -43,12 +43,17 @@ function Cats(props) {
         .then(json => {
             console.log('json.data:', json.data);
             const displayvar = json.data.map(category => {
-                return <Grid.Column key={category.id} value={category.id} name={category.id}>
-                    <div value={category.id} name={category.id} onClick={filterProjects}>
+                return <Grid.Column key={category.id}>
+                    <div onClick={() => filterByCat(category.id)} className={"dtk dtk-tiles"}>
                         <Image src={category.image ? category.image : 'https://react.semantic-ui.com/images/wireframe/image.png'} fluid/>
-                        <Rail inverted size='mini' attached internal position='left' value={category.id} name={category.id}>
-                            {/* <Segment inverted size='big' value={category.id} name={category.id} onClick={filterProjects}>{category.name}</Segment> */}
-                            <Button size={'huge'} color="orange" onClick={filterProjects} value={category.id}>{category.name}</Button>
+                        {/* <Label attached='bottom left'>CSS</Label> */}
+                        <Rail attached internal position='bottom-left'>
+                            <Segment inverted size='medium'>
+                                <Header>
+                                    {category.name}
+                                </Header>
+                            </Segment>
+                            {/* <Button size={'huge'} color="orange" onClick={filterProjects} value={category.id}>{category.name}</Button> */}
                         </Rail>
                     </div>
                 </Grid.Column>
@@ -68,35 +73,41 @@ function Cats(props) {
         .then(res => res.json())
         .then(json => {
             console.log('json.data:', json.data);
-            const displayvar = json.data.map(project => {
-                return <Menu.Item key={project.id}
-                    name={project.id}
-                    active={activeItem === project.id}
-                    onClick={handleItemClick}
-                    value={project.id}
-                    >
-                    <Label color='blue' value={project.id}>Go</Label>
-                    {project.name}
-                    {/* <Button primary onClick={handleItemClick} value={project.id}>Goto</Button> */}
-                </Menu.Item>
-            })
-            setProjectDisplay(displayvar);
+            setProjectDisplay(mapProjects(json.data));
         });
     }
 
-    function filterProjects(event, data) {
+    // function filterProjects(event, data) {
+    //     // event.stopPropagation();
+    //     // console.log('event.target:', event.target);
+    //     // console.log('event.currentTarget:', event.currentTarget);
+    //     // const value = event.currentTarget.name;
+    //     // console.log('value:', value);
+    //     // console.log('data:', data);
+    //     fetch(URL3+event.target.value)
+    //     .then(res => res.json())
+    //     .then(json => {
+    //         console.log('json.data:', json.data);
+    //         setProjectDisplay(mapProjects(json.data));
+    //     })
+    // }
+
+    function filterByCat(name) {
         // event.stopPropagation();
         // console.log('event.target:', event.target);
         // console.log('event.currentTarget:', event.currentTarget);
         // const value = event.currentTarget.name;
         // console.log('value:', value);
         // console.log('data:', data);
-        fetch(URL3+event.target.value)
+        fetch(URL3+name)
         .then(res => res.json())
         .then(json => {
             console.log('json.data:', json.data);
             setProjectDisplay(mapProjects(json.data));
         })
+    }
+
+
 
     function mapProjects(data){
         return data.map(project => {
@@ -116,7 +127,7 @@ function Cats(props) {
         // console.log('event.target.value:', event.target.value);
         // console.log('event.target:', event.target);
         // console.log('data:', data);
-    }
+    
 
 
 

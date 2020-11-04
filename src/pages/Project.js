@@ -287,7 +287,7 @@ function Project(props) {
                             open={open}
                             trigger={<Button color='red'>Make a Pledge</Button>}
                             >
-                            <Modal.Header>Select a Photo</Modal.Header>
+                            <Modal.Header>Fund this Revolution</Modal.Header>
                             <Modal.Content>
                                 <Segment>
                                     <Form>
