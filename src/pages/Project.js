@@ -128,6 +128,7 @@ function Project(props) {
     }
 
     function pledgeIt(event){
+        setOpen(false)
         fetch(URL7, {
             method: "POST",
             headers: {
@@ -279,56 +280,68 @@ function Project(props) {
                     Pledges
                     </Menu.Item>
                     <Menu.Item>
-                        <Button color='red'>Make a Pledge</Button>
+                        <Modal
+                            size={'tiny'}
+                            onClose={() => setOpen(false)}
+                            onOpen={() => setOpen(true)}
+                            open={open}
+                            trigger={<Button color='red'>Make a Pledge</Button>}
+                            >
+                            <Modal.Header>Select a Photo</Modal.Header>
+                            <Modal.Content>
+                                <Segment>
+                                    <Form>
+                                        <Form.Input
+                                            icon='user'
+                                            iconPosition='left'
+                                            label='Pledge Amount'
+                                            placeholder='pledge'
+                                            value={pledge ? pledge : ""}
+                                            onChange={(e) => setPledge(e.target.value)}
+                                        />
+
+                                        <Form.Input
+                                            icon='payment'
+                                            iconPosition='left'
+                                            label='Credit Card'
+                                            placeholder='CC#'
+                                        />
+
+                                        <Header>Or..</Header>
+
+                                        <Form.Input
+                                            icon='question'
+                                            iconPosition='left'
+                                            label='Monero Escrow Address'
+                                            value={"888tNkZrPN6JsEgekjMnABU4TBzc2Dt29EPAvkRxbANsAnjyPbb3iQ1YBRk1UXcdRsiKc9dhwMVgN5S9cQUiyoogDavup3H"}
+                                        />
+
+                                        </Form>
+
+                                </Segment>
+                            </Modal.Content>
+                            <Modal.Actions>
+                                <Button 
+                                color='black' 
+                                onClick={() => setOpen(false)}
+                                >
+                                Cancel
+                                </Button>
+                                <Button 
+                                content='Make Pledge' 
+                                positive 
+                                onClick={pledgeIt}
+                                labelPosition='right'
+                                icon='checkmark'
+                                />
+
+                            </Modal.Actions>
+                        </Modal>
+
                     </Menu.Item>
                 </Menu>
 
-                <Modal
-                    onClose={() => setOpen(false)}
-                    onOpen={() => setOpen(true)}
-                    open={open}
-                    trigger={<Button>Show Modal</Button>}
-                    >
-                    <Modal.Header>Select a Photo</Modal.Header>
-                    <Modal.Content image>
-                        <Image size='medium' src='/images/avatar/large/rachel.png' wrapped />
-                        <Modal.Description>
-                        <Header>Default Profile Image</Header>
-                        <p>
-                            We've found the following gravatar image associated with your e-mail
-                            address.
-                        </p>
-                        <p>Is it okay to use this photo?</p>
-                        </Modal.Description>
-                    </Modal.Content>
-                    <Modal.Actions>
-                        <Button color='black' onClick={() => setOpen(false)}>
-                        Nope
-                        </Button>
-                        <Button
-                        content="Yep, that's me"
-                        labelPosition='right'
-                        icon='checkmark'
-                        onClick={() => setOpen(false)}
-                        positive
-                        />
-                    </Modal.Actions>
-                    </Modal>
 
-                <Segment>
-                    <Form>
-                            <Form.Input
-                                icon='user'
-                                iconPosition='left'
-                                label='Pledge Amount'
-                                placeholder='pledge'
-                                value={pledge ? pledge : ""}
-                                onChange={(e) => setPledge(e.target.value)}
-                            />
-                            <Button content='Pledge' primary onClick={pledgeIt}/>
-                        </Form>
-
-                </Segment>
 
 
             </Grid.Column>
