@@ -12,6 +12,7 @@ import GridFeatured from 'components/blogs/GridWithFeaturedPost';
 import Footer from "components/footers/FiveColumnDark";
 import SimpleSubscribe from 'components/forms/SimpleSubscribeNewsletter';
 
+import AccordianFluid from '../components/AccordianFluid';
 
 
 
@@ -48,6 +49,9 @@ function Home() {
             <br/>
 
             <SimpleSubscribe/>
+
+            <AccordianFluid/>
+
 
 
             <br/>

@@ -78,8 +78,9 @@ function Maps2(props: any) {
                 onClick={() => {
                   if (events) {
                     console.log("got to onclick");
-                    props.filter();
-                    alert(`Clicked: ${feature.properties.name} (${feature.id})`);
+                    props.filter(feature.id);
+                    props.add(feature.id);
+                    // alert(`Clicked: ${feature.properties.name} (${feature.id})`);
                     console.log(feature.id);
                   }
                 }}
@@ -92,3 +93,4 @@ function Maps2(props: any) {
   );
 };
 export default Maps2;
+

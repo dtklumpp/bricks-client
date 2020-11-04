@@ -33,12 +33,14 @@ function onChange(a, b, c) {
 function Map(props) {
 
     const URL = "http://localhost:8000/projects/"
-    const URL2 = "http://localhost:8000/projects/location/USA"
+    const URL2 = "http://localhost:8000/projects/location/"
 
 
     const [projectDisplay, setProjectDisplay] = useState("");
 
     const [activeItem, setActiveItem] = useState('inbox'); 
+
+    const [contList, setContList] = useState(['first']);
 
     function handleItemClick(e, {name}){
         setActiveItem(name);
@@ -72,8 +74,8 @@ function Map(props) {
         });
     }
 
-    function filterProjects(event, data) {
-        fetch(URL2)
+    function filterProjects(data) {
+        fetch(URL2+data)
         .then(res => res.json())
         .then(json => {
             console.log('json.data:', json.data);
@@ -98,6 +100,10 @@ function Map(props) {
     }
 
 
+    function appendContList(str){
+        setContList(contList.concat([str]));
+        console.log('contList:', contList, [str]);
+    }
 
 
 
@@ -111,7 +117,7 @@ function Map(props) {
             <Grid.Column width={12}>
                 <h2>12</h2>
                 <h2>map</h2>
-                <Map2 width={1000} height={500} events={true} filter={filterProjects}/>
+                <Map2 width={1000} height={500} events={true} filter={filterProjects} add={appendContList}/>
                 {/* <Example width={1000} height={500} events={true} filter={filterProjects}/> */}
 
                 {/* <GeoCustom/> */}
