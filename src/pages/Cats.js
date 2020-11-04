@@ -43,10 +43,10 @@ function Cats(props) {
         .then(json => {
             console.log('json.data:', json.data);
             const displayvar = json.data.map(category => {
-                return <Grid.Column key={category.id} value={category.id} name={category.id} onClick={filterProjects}>
-                    <div>
+                return <Grid.Column key={category.id} value={category.id} name={category.id}>
+                    <div value={category.id} name={category.id} onClick={filterProjects}>
                         <Image src={category.image ? category.image : 'https://react.semantic-ui.com/images/wireframe/image.png'} fluid/>
-                        <Rail inverted size='mini' attached internal position='left' value={category.id} name={category.id} onClick={filterProjects}>
+                        <Rail inverted size='mini' attached internal position='left' value={category.id} name={category.id}>
                             {/* <Segment inverted size='big' value={category.id} name={category.id} onClick={filterProjects}>{category.name}</Segment> */}
                             <Button size={'huge'} color="orange" onClick={filterProjects} value={category.id}>{category.name}</Button>
                         </Rail>
@@ -85,6 +85,12 @@ function Cats(props) {
     }
 
     function filterProjects(event, data) {
+        // event.stopPropagation();
+        // console.log('event.target:', event.target);
+        // console.log('event.currentTarget:', event.currentTarget);
+        // const value = event.currentTarget.name;
+        // console.log('value:', value);
+        // console.log('data:', data);
         fetch(URL3+event.target.value)
         .then(res => res.json())
         .then(json => {

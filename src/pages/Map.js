@@ -7,7 +7,9 @@ import MenuVertical from '../components/MenuVertical';
 
 import {Menu, Label} from 'semantic-ui-react';
 
-import Example from '../components/visx/Example.tsx';
+// import Example from '../components/visx/Example.tsx';
+import Map2 from '../components/visx/Map2.tsx';
+
 import '../components/visx/sandbox-styles.css';
 
 
@@ -109,7 +111,8 @@ function Map(props) {
             <Grid.Column width={12}>
                 <h2>12</h2>
                 <h2>map</h2>
-                <Example width={1000} height={500} events={true} filter={filterProjects}/>
+                <Map2 width={1000} height={500} events={true} filter={filterProjects}/>
+                {/* <Example width={1000} height={500} events={true} filter={filterProjects}/> */}
 
                 {/* <GeoCustom/> */}
             </Grid.Column>
