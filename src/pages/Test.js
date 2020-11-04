@@ -49,6 +49,8 @@ function Test() {
     const [var1, setVar1] = useState(5);
     const [fetch1, setFetch1] = useState(4);
 
+    const [local, setLocal] = useState(2);
+
     function increaseVar1() {
         setVar1(var1 + 1);
     }
@@ -105,11 +107,17 @@ function Test() {
 
 
 
+    function localSet() {
+        localStorage.setItem("dkf", 5);
+    }
 
+    function localGet() {
+        setLocal(localStorage.dkf);
+    }
 
-
-
-
+    function localClear() {
+        localStorage.clear();
+    }
 
 
 
@@ -130,6 +138,20 @@ function Test() {
         <button onClick={getProjects} className={"ui button"}>projects</button><br/>
         <button onClick={makeIt} className={"ui button"}>create project</button><br/>
 
+        <br/>
+<hr/>
+<br/>
+
+<button onClick={localSet} className={"ui button"}>local set</button><br/>
+<button onClick={localGet} className={"ui button"}>local get</button><br/>
+<button onClick={localClear} className={"ui button"}>local clear</button><br/>
+
+
+<br/>
+<hr/>
+<br/>
+
+        <h3>local is {local}</h3>
         <h4>fetch1 is {fetch1}</h4>
         <br/>
         <button class="ui button">Click Here</button>
