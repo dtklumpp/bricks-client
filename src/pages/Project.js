@@ -9,8 +9,12 @@ import { Step } from 'semantic-ui-react';
 
 import { Button, Comment, Form, Header } from 'semantic-ui-react'
 
+import { Input, Label, Menu } from 'semantic-ui-react'
 
 import MenuVertical from '../components/MenuVertical';
+
+import {Modal} from 'semantic-ui-react';
+
 
 export default Project;
 
@@ -20,6 +24,8 @@ function Project(props) {
     const URL4 = "http://localhost:8000/comments/create/"+props.match.params.id;
     const URL5 = "http://localhost:8000/comments/delete/";
     const URL6 = "http://localhost:8000/projects/view/"+props.match.params.id;
+    const URL7 = "http://localhost:8000/projects/pledge/"+props.match.params.id;
+
 
 
     const [commentArray, setCommentArray] = useState([]);
@@ -28,7 +34,20 @@ function Project(props) {
     const [newName, setNewName] = useState("");
     const [newDesc, setNewDesc] = useState("");
 
-    const [oneProject, setOneProject] = useState({});
+    const [oneProject, setOneProject] = useState(null);
+
+    const [activeItem, setActiveItem] = useState('inbox'); 
+
+    const [pledge, setPledge] = useState(0);
+
+    const [open, setOpen] = useState(false);
+
+
+    function handleItemClick(e, {name}){
+        setActiveItem(name);
+    }
+    handleItemClick = (e, { name }) => setActiveItem(name);
+  
 
 
     const newObj = {
@@ -108,7 +127,21 @@ function Project(props) {
         })
     }
 
+    function pledgeIt(event){
+        fetch(URL7, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({pledge: pledge}),
+        })
+        .then(res => res.json())
+        .then(json => {
+            console.log('json:', json);
+            getProject();
+        })
 
+    }
 
 
 
@@ -134,7 +167,7 @@ function Project(props) {
         
         <Grid celled>
             <Grid.Column width={1}>1</Grid.Column>
-            <Grid.Column width={9}>
+            <Grid.Column width={11}>
                 <h2>9</h2>
                 <Card>
                     <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
@@ -214,12 +247,92 @@ function Project(props) {
             </Grid.Column>
 
 
-            <Grid.Column width={5}>
+            <Grid.Column width={4}>
                 <h2>5</h2>
-                <MenuVertical/>
+
+
+                <Menu vertical>
+                    <Menu.Item
+                    name='inbox'
+                    active={activeItem === 'inbox'}
+                    onClick={handleItemClick}
+                    >
+                    <Label color='teal'>{oneProject ? "$"+(Math.floor(oneProject.goal/1000))+",000" : "..."}</Label>
+                    Goal
+                    </Menu.Item>
+
+                    <Menu.Item
+                    name='spam'
+                    active={activeItem === 'spam'}
+                    onClick={handleItemClick}
+                    >
+                    <Label>{oneProject ? (oneProject.funding/oneProject.goal * 100)+"%" : "..."}</Label>
+                    Funding
+                    </Menu.Item>
+
+                    <Menu.Item
+                    name='updates'
+                    active={activeItem === 'updates'}
+                    onClick={handleItemClick}
+                    >
+                    <Label>{oneProject ? oneProject.pledges : "..."}</Label>
+                    Pledges
+                    </Menu.Item>
+                    <Menu.Item>
+                        <Button color='red'>Make a Pledge</Button>
+                    </Menu.Item>
+                </Menu>
+
+                <Modal
+                    onClose={() => setOpen(false)}
+                    onOpen={() => setOpen(true)}
+                    open={open}
+                    trigger={<Button>Show Modal</Button>}
+                    >
+                    <Modal.Header>Select a Photo</Modal.Header>
+                    <Modal.Content image>
+                        <Image size='medium' src='/images/avatar/large/rachel.png' wrapped />
+                        <Modal.Description>
+                        <Header>Default Profile Image</Header>
+                        <p>
+                            We've found the following gravatar image associated with your e-mail
+                            address.
+                        </p>
+                        <p>Is it okay to use this photo?</p>
+                        </Modal.Description>
+                    </Modal.Content>
+                    <Modal.Actions>
+                        <Button color='black' onClick={() => setOpen(false)}>
+                        Nope
+                        </Button>
+                        <Button
+                        content="Yep, that's me"
+                        labelPosition='right'
+                        icon='checkmark'
+                        onClick={() => setOpen(false)}
+                        positive
+                        />
+                    </Modal.Actions>
+                    </Modal>
+
+                <Segment>
+                    <Form>
+                            <Form.Input
+                                icon='user'
+                                iconPosition='left'
+                                label='Pledge Amount'
+                                placeholder='pledge'
+                                value={pledge ? pledge : ""}
+                                onChange={(e) => setPledge(e.target.value)}
+                            />
+                            <Button content='Pledge' primary onClick={pledgeIt}/>
+                        </Form>
+
+                </Segment>
+
+
             </Grid.Column>
 
-            <Grid.Column width={1}>1</Grid.Column>
 
         </Grid>
     
