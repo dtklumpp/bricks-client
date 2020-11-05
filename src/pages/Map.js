@@ -5,7 +5,6 @@ import HeaderBar from '../components/Header';
 
 
 import {Grid} from 'semantic-ui-react';
-import MenuVertical from '../components/MenuVertical';
 
 import {Menu, Label} from 'semantic-ui-react';
 

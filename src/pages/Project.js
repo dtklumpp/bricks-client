@@ -5,19 +5,17 @@ import HeaderBar from '../components/Header';
 
 import {Segment} from 'semantic-ui-react';
 
-import {Grid, Row} from 'semantic-ui-react';
+import {Grid} from 'semantic-ui-react';
 import { Card, Icon, Image } from 'semantic-ui-react';
 import { Step } from 'semantic-ui-react';
 
 import { Button, Comment, Form, Header } from 'semantic-ui-react'
 
-import { Input, Label, Menu } from 'semantic-ui-react'
+import { Label, Menu } from 'semantic-ui-react'
 
-import MenuVertical from '../components/MenuVertical';
 
 import {Modal} from 'semantic-ui-react';
 
-import {NavLink} from 'react-router-dom';
 
 
 
@@ -266,13 +264,13 @@ function Project(props) {
                 <Header>Campaign Metrics:</Header>
 
 
-                <Menu vertical>
+                <Menu vertical size="big">
                     <Menu.Item
                     name='inbox'
                     active={activeItem === 'inbox'}
                     onClick={handleItemClick}
                     >
-                    <Label color='teal'>{oneProject ? "$"+(Math.floor(oneProject.goal/1000))+",000" : "..."}</Label>
+                    <Label size="big" color='teal'>{oneProject ? "$"+(Math.floor(oneProject.goal/1000))+",000" : "..."}</Label>
                     Goal
                     </Menu.Item>
 
@@ -281,7 +279,7 @@ function Project(props) {
                     active={activeItem === 'spam'}
                     onClick={handleItemClick}
                     >
-                    <Label>{oneProject ? (oneProject.funding/oneProject.goal * 100)+"%" : "..."}</Label>
+                    <Label size="big">{oneProject ? (oneProject.funding/oneProject.goal * 100)+"%" : "..."}</Label>
                     Funding
                     </Menu.Item>
 
@@ -290,7 +288,7 @@ function Project(props) {
                     active={activeItem === 'updates'}
                     onClick={handleItemClick}
                     >
-                    <Label>{oneProject ? oneProject.pledges : "..."}</Label>
+                    <Label size="big">{oneProject ? oneProject.pledges : "..."}</Label>
                     Pledges
                     </Menu.Item>
                     <Menu.Item>
@@ -380,6 +378,9 @@ function Project(props) {
 
                     </Menu.Item>
                 </Menu>
+
+            <Header>Pledge Rates:</Header>
+
 
 
 

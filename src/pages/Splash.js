@@ -4,11 +4,9 @@ import React, { Component } from 'react'
 import {
   Button,
   Container,
-  Divider,
   Grid,
   Header,
   Icon,
-  Image,
   List,
   Menu,
   Segment,
@@ -25,11 +23,8 @@ import '../App.css';
 
 import GridFeatured from 'components/blogs/GridWithFeaturedPost';
 
-import Footer from "components/footers/FiveColumnDark";
-import AccordianFluid from '../components/AccordianFluid';
-import SimpleSubscribe from 'components/forms/SimpleSubscribeNewsletter';
 
-import {NavLink, Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 
 

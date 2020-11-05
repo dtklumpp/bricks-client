@@ -1,4 +1,3 @@
-import { OmitProps } from 'antd/lib/transfer/ListBody';
 import {useState} from 'react';
 import {useEffect} from 'react';
 
@@ -9,14 +8,11 @@ import {Segment} from 'semantic-ui-react';
 import {Header} from 'semantic-ui-react';
 import {Rail} from 'semantic-ui-react';
 
-import {Button} from 'semantic-ui-react';
-
 import {Menu, Label} from 'semantic-ui-react';
 
 
 import {Grid} from 'semantic-ui-react';
 import {Image} from 'semantic-ui-react';
-import MenuVertical from '../components/MenuVertical';
 
 export default Cats;
 
@@ -28,6 +24,8 @@ function Cats(props) {
 
     const [projectDisplay, setProjectDisplay] = useState("");
 
+    const [filterCat, setFilterCat] = useState("General Revolt");
+
 
     const URL = "http://localhost:8000/categories/"
     const URL2 = "http://localhost:8000/projects/"
@@ -37,7 +35,7 @@ function Cats(props) {
 
     useEffect(function(){
         getCategories();
-        getProjects();
+        filterByCat(1, filterCat);
     }, [])
 
     function getCategories() {
@@ -46,9 +44,10 @@ function Cats(props) {
         .then(json => {
             console.log('json.data:', json.data);
             const array = json.data.reverse();
+            array.sort((a, b) => (a.id > b.id) ? 1 : -1);
             const displayvar = array.map(category => {
                 return <Grid.Column key={category.id}>
-                    <div onClick={() => filterByCat(category.id)} className={"dtk dtk-tiles"}>
+                    <div onClick={() => filterByCat(category.id, category.name)} className={"dtk dtk-tiles"}>
                         <Image src={category.image ? category.image : 'https://react.semantic-ui.com/images/wireframe/image.png'} fluid className={"dtk-cover"}/>
                         {/* <Label attached='bottom left'>CSS</Label> */}
                         <Rail attached internal position='bottom-left'>
@@ -96,7 +95,7 @@ function Cats(props) {
     //     })
     // }
 
-    function filterByCat(name) {
+    function filterByCat(name, word) {
         // event.stopPropagation();
         // console.log('event.target:', event.target);
         // console.log('event.currentTarget:', event.currentTarget);
@@ -108,6 +107,7 @@ function Cats(props) {
         .then(json => {
             console.log('json.data:', json.data);
             setProjectDisplay(mapProjects(json.data));
+            setFilterCat(word);
         })
     }
 
@@ -168,7 +168,7 @@ function Cats(props) {
 
 
             <Grid.Column width={2}>
-                <Header>Filtered:</Header>
+                <Header>{filterCat}:</Header>
 
                 <Menu inverted vertical>
                     {projectDisplay}

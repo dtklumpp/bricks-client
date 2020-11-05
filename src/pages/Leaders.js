@@ -5,12 +5,10 @@ import HeaderBar from '../components/Header';
 
 
 import {Grid} from 'semantic-ui-react';
-import MenuVertical from '../components/MenuVertical';
 
 import {Menu, Label} from 'semantic-ui-react';
 
 import {Image} from 'semantic-ui-react';
-import {Container} from 'semantic-ui-react';
 
 import { Carousel } from 'antd';
 import {Header} from 'semantic-ui-react';
@@ -131,7 +129,7 @@ function Leaders(props) {
             </Grid.Column>
 
             <Grid.Column width={3}>
-                <Header>Links:</Header>
+                <Header>Trending Today:</Header>
 
                 <Menu inverted vertical>
                     {projectDisplay}
