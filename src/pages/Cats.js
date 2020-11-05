@@ -24,7 +24,11 @@ function Cats(props) {
 
     const [projectDisplay, setProjectDisplay] = useState("");
 
-    const [filterCat, setFilterCat] = useState("General Revolt");
+    const [filterCat, setFilterCat] = useState("Filter");
+    const [filterId, setFilterId] = useState(1);
+
+
+
 
 
     const URL = "http://localhost:8000/categories/"
@@ -35,8 +39,21 @@ function Cats(props) {
 
     useEffect(function(){
         getCategories();
-        filterByCat(1, filterCat);
+        if(localStorage.cat_id && localStorage.cat_name){
+            let catId = localStorage.cat_id;
+            let catName = localStorage.cat_name;
+            setFilterId(catId)
+            setFilterCat(catName)
+            filterByCat(catId, catName);
+        }
+        else{            
+            filterByCat(filterId, filterCat);
+        }
     }, [])
+
+    function clearPrefs(){
+        localStorage.clear();
+    }
 
     function getCategories() {
         fetch(URL)
@@ -71,14 +88,14 @@ function Cats(props) {
         props.history.push('/project/'+name);
     }
 
-    function getProjects() {
-        fetch(URL2)
-        .then(res => res.json())
-        .then(json => {
-            console.log('json.data:', json.data);
-            setProjectDisplay(mapProjects(json.data));
-        });
-    }
+    // function getProjects() {
+    //     fetch(URL2)
+    //     .then(res => res.json())
+    //     .then(json => {
+    //         console.log('json.data:', json.data);
+    //         setProjectDisplay(mapProjects(json.data));
+    //     });
+    // }
 
     // function filterProjects(event, data) {
     //     // event.stopPropagation();
@@ -108,6 +125,8 @@ function Cats(props) {
             console.log('json.data:', json.data);
             setProjectDisplay(mapProjects(json.data));
             setFilterCat(word);
+            localStorage.setItem("cat_id", name);
+            localStorage.setItem("cat_name", word);
         })
     }
 
@@ -173,6 +192,9 @@ function Cats(props) {
                 <Menu inverted vertical>
                     {projectDisplay}
                 </Menu>
+
+                <button onClick={clearPrefs} className={"ui button orange"}>clear prefs</button><br/>
+
 
             </Grid.Column>
 
