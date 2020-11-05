@@ -271,6 +271,8 @@ function Splash(props) {
 <br/>
 <br/>
 <br/>
+
+<br/>
         <Grid columns={3}>
           <Grid.Column>
             <Header as='h2' icon>
@@ -304,7 +306,7 @@ function Splash(props) {
           </Grid.Column>
 
         </Grid>
-
+<br/>
 
 <br/>
 <br/>
@@ -360,7 +362,7 @@ function Splash(props) {
             <Segment attached='bottom' inverted>
             </Segment>
 
-            <GridFeatured/>
+    <GridFeatured/>
 
 
     <Segment inverted vertical style={{ padding: '5em 0em' }}>
@@ -385,7 +387,7 @@ function Splash(props) {
                 <List.Item as='a'>Disclaimer</List.Item>
               </List>
             </Grid.Column>
-            <Grid.Column width={7}>
+            <Grid.Column width={3}>
               <Header as='h4' inverted>
                 Contact
               </Header>
@@ -393,6 +395,17 @@ function Splash(props) {
                 dtklumpp@gmail.com
               </p>
             </Grid.Column>
+            <Grid.Column width={5}>
+              <Header as='h4' inverted>
+                We are..
+              </Header>
+              <List link inverted>
+                <List.Item as='a'>..crowdfunding for revolutions</List.Item>
+                <List.Item as='a'>..groupon for social change</List.Item>
+                <List.Item as='a'>..kickstarter for your tired, your hungry, your yearning to breathe free..</List.Item>
+              </List>
+            </Grid.Column>
+
           </Grid.Row>
         </Grid>
       </Container>
