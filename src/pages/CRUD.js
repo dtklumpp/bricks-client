@@ -1,5 +1,7 @@
 import {useState} from 'react';
 import {useEffect} from 'react';
+import HeaderBar from '../components/Header';
+
 
 import {NavLink} from 'react-router-dom';
 
@@ -246,6 +248,9 @@ function Crud() {
 
 
     return (<>
+
+<HeaderBar/>
+
 
     <Container>
         <h3>crud page</h3>        

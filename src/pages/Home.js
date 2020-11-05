@@ -1,5 +1,7 @@
 import {useState} from 'react';
 import {useEffect} from 'react';
+import HeaderBar from '../components/Header';
+
 
 import "style.css";
 import "tailwindcss/dist/base.css";
@@ -12,7 +14,14 @@ import GridFeatured from 'components/blogs/GridWithFeaturedPost';
 import Footer from "components/footers/FiveColumnDark";
 import SimpleSubscribe from 'components/forms/SimpleSubscribeNewsletter';
 
+import MiniCentered from "components/footers/MiniCenteredFooter";
+import DownloadApp from "components/cta/DownloadApp";
+
 import AccordianFluid from '../components/AccordianFluid';
+
+import {Header, Icon} from 'semantic-ui-react';
+import {Menu, Table, Segment} from 'semantic-ui-react';
+
 
 
 
@@ -22,14 +31,10 @@ function Home() {
 
     return (
         <>
-            <h3 class="dtk">Home Page here</h3>
-            <h3>unformat-O!</h3>
+                <HeaderBar/>
 
             <br/>
-            <hr/>
-            <br/>
-
-                    <BetterHero/>
+            <BetterHero/>
 
             <br/>
             <hr/>
@@ -50,15 +55,92 @@ function Home() {
 
             <SimpleSubscribe/>
 
+
+<br/>
+<hr/>
+<br/>
+
             <AccordianFluid/>
 
 
+<br/>
+<hr/>
+<br/>
+
+            <Header as='h2' icon>
+                <Icon name='settings' />
+                Account Settings
+                <Header.Subheader>
+                Manage your account settings and set e-mail preferences.
+                </Header.Subheader>
+            </Header>
+
+
+<br/>
+<hr/>
+<br/>
+
+
+            <Menu attached='top' compact inverted widths={3}>
+                <Menu.Item as='a'>Item</Menu.Item>
+                <Menu.Item as='a'>Item</Menu.Item>
+                <Menu.Item as='a'>Item</Menu.Item>
+            </Menu>
+            <Table attached inverted>
+                <Table.Header>
+                <Table.HeaderCell>Header</Table.HeaderCell>
+                <Table.HeaderCell>Header</Table.HeaderCell>
+                <Table.HeaderCell>Header</Table.HeaderCell>
+                </Table.Header>
+                <Table.Body>
+                <Table.Row>
+                    <Table.Cell>Cell</Table.Cell>
+                    <Table.Cell>Cell</Table.Cell>
+                    <Table.Cell>Cell</Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                    <Table.Cell>Cell</Table.Cell>
+                    <Table.Cell>Cell</Table.Cell>
+                    <Table.Cell>Cell</Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                    <Table.Cell>Cell</Table.Cell>
+                    <Table.Cell>Cell</Table.Cell>
+                    <Table.Cell>Cell</Table.Cell>
+                </Table.Row>
+                </Table.Body>
+            </Table>
+            <Segment attached='bottom' inverted>
+                Segment
+            </Segment>
+
+            <br/>
+            <hr/>
+            <br/>
+
+            <DownloadApp/>
 
             <br/>
             <hr/>
             <br/>
 
             <Footer/>
+
+
+            <br/>
+            <hr/>
+            <br/>
+
+            <MiniCentered/>
+
+            <br/>
+            <hr/>
+            <br/>
+
+
+            <br/>
+            <hr/>
+            <br/>
 
 
             <br/>

@@ -3,10 +3,10 @@ import {Grid} from 'semantic-ui-react';
 
 import MenuInverted from './MenuInverted';
 
-export default Header;
+export default HeaderBar;
 
 
-function Header() {
+function HeaderBar() {
     return (<>
         <Grid>
             <Grid.Column width={1}>

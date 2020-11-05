@@ -2,6 +2,9 @@ import { OmitProps } from 'antd/lib/transfer/ListBody';
 import {useState} from 'react';
 import {useEffect} from 'react';
 
+import HeaderBar from '../components/Header';
+
+
 import {Segment} from 'semantic-ui-react';
 import {Header} from 'semantic-ui-react';
 import {Rail} from 'semantic-ui-react';
@@ -133,6 +136,8 @@ function Cats(props) {
 
 
     return <>
+            <HeaderBar/>
+
         <Grid>
             <Grid.Column width={1}>1</Grid.Column>
 

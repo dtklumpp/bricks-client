@@ -1,5 +1,7 @@
 import {useState} from 'react';
 import {useEffect} from 'react';
+import HeaderBar from '../components/Header';
+
 
 import { Button } from 'semantic-ui-react';
 // import { Accordion, Icon } from 'semantic-ui-react'
@@ -129,7 +131,12 @@ function Test() {
     const [open, setOpen] = useState(false);
 
 
-    return ( <> <Container>
+    return ( <> 
+    
+    <HeaderBar/>
+
+    
+    <Container>
         <h3>Test Page here-Ooho</h3>
         <h4>var1 is {var1}</h4>
         <button onClick={increaseVar1} className={"ui button"}>change</button><br/>
@@ -752,9 +759,9 @@ function Test() {
     <Divider hidden />
     <Image src={src} size='tiny' />
     <Divider hidden />
-    <Image src={src} size='small' />
+    <Image src={'https://upload.wikimedia.org/wikipedia/commons/c/cf/RETRATO_DEL_GRAL._FRANCISCO_FRANCO_BAHAMONDE_%28adjusted_levels%29.jpg'} size='small' />
     <Divider hidden />
-    <Image src={src} size='medium' />
+    <Image src={'/logo512.png'} size='medium' />
     <Divider hidden />
     <Image src={src} size='large' />
     <Divider hidden />

@@ -1,5 +1,7 @@
 import {useState} from 'react';
 import {useEffect} from 'react';
+import HeaderBar from '../components/Header';
+
 
 
 import {Grid} from 'semantic-ui-react';
@@ -108,6 +110,9 @@ function Map(props) {
 
 
     return <>
+
+<HeaderBar/>
+
 
         <button onClick={filterProjects} className={"ui button"}>filter</button><br/>
 

@@ -1,3 +1,6 @@
+import HeaderBar from '../components/Header';
+
+
 import ParentSize from '@visx/responsive/lib/components/ParentSize';
 
 import Example from '../components/visx/Example.tsx';
@@ -16,6 +19,9 @@ export default Visx;
 
 function Visx() {
     return (<>
+
+    <HeaderBar/>
+
         <Container>
             <Example width={1000} height={500} events={true}/>
         </Container>

@@ -1,5 +1,7 @@
 import {useState} from 'react';
 import {useEffect} from 'react';
+import HeaderBar from '../components/Header';
+
 
 
 import {Grid} from 'semantic-ui-react';
@@ -110,6 +112,8 @@ function Leaders(props) {
 
 
     return <>
+            <HeaderBar/>
+
         <Grid>
             <Grid.Column width={1}>1</Grid.Column>
             <Grid.Column width={9}>

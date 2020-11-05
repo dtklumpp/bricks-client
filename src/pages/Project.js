@@ -1,5 +1,7 @@
 import {useState} from 'react';
 import {useEffect} from 'react';
+import HeaderBar from '../components/Header';
+
 
 import {Segment} from 'semantic-ui-react';
 
@@ -165,6 +167,9 @@ function Project(props) {
 
 
     return (<>
+
+<HeaderBar/>
+
         
         <Grid celled>
             <Grid.Column width={1}>1</Grid.Column>

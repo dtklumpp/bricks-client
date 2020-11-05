@@ -1,4 +1,6 @@
 import React from "react";
+import HeaderBar from '../components/Header';
+
 
 import "style.css";
 import "tailwindcss/dist/base.css";
@@ -16,6 +18,8 @@ export default TreactPage;
 
 function TreactPage() {
     return (<>
+            <HeaderBar/>
+
         <br/>
         <br/>
         <AnimationRevealPage disabled>

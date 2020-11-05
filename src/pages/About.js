@@ -1,6 +1,9 @@
 // import "../holding/slick-carousel/slick/slick.css";
 // import "../holding/slick-carousel/slick/slick-theme.css";
 
+import HeaderBar from '../components/Header';
+
+
 import 'antd/dist/antd.css';
 
 // import './About.css';
@@ -34,6 +37,8 @@ function onChange(a, b, c) {
 
 function About() {
     return (<>
+            <HeaderBar/>
+
         <h3>About Page here</h3>
 
         <br/>
