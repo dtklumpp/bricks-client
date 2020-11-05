@@ -16,6 +16,9 @@ import { Label, Menu } from 'semantic-ui-react'
 
 import {Modal} from 'semantic-ui-react';
 
+import LineChartSample from '../components/recharts/LineChart';
+
+
 
 
 
@@ -226,6 +229,10 @@ function Project(props) {
                     </Step>
                 </Step.Group>
 
+
+            <Header>Pledge Rates:</Header>
+            <LineChartSample/>
+
                 {/* <button onClick={getComments} className={"ui button"}>comments</button><br/> */}
                 {/* <button onClick={getProject} className={"ui button"}>project</button><br/> */}
 
@@ -378,8 +385,6 @@ function Project(props) {
 
                     </Menu.Item>
                 </Menu>
-
-            <Header>Pledge Rates:</Header>
 
 
 
