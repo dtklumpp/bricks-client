@@ -16,7 +16,7 @@ export default class MenuInverted extends Component {
           name='home'
           active={activeItem === 'home'}
           onClick={this.handleItemClick}
-        ><NavLink to='/template'>group d'état</NavLink></Menu.Item>
+        ><NavLink to='/splash'>group d'état</NavLink></Menu.Item>
         <Menu.Item
           name='cats'
           active={activeItem === 'cats'}

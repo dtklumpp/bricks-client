@@ -393,7 +393,7 @@ function Crud() {
             <Grid.Column width={1}>
                 <ul>
                     <li>
-                        <NavLink to='/'>Home</NavLink>
+                        <NavLink to='/splash'>Splash</NavLink>
                     </li>
                     <li>
                         <NavLink to='/about'>About</NavLink>
@@ -428,7 +428,7 @@ function Crud() {
                         <NavLink to='/visx'>Visx</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/template'>Template</NavLink>
+                        <NavLink to='/home'>Home</NavLink>
                     </li>
                     <li>
                         <NavLink to='/treact'>Treact</NavLink>

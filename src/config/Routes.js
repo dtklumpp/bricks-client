@@ -7,7 +7,7 @@ import Leaders from '../pages/Leaders';
 import Map from '../pages/Map';
 import Project from '../pages/Project';
 import Visx from '../pages/Visx';
-import Template from '../pages/Template';
+import Splash from '../pages/Splash';
 import TreactPage from '../pages/Treact';
 import Crud from '../pages/CRUD';
 
@@ -16,7 +16,8 @@ export default Routes;
 
 function Routes() {
     return <Switch>
-        <Route exact path='/' component={Home}/>
+        <Route exact path='/' component={Splash}/>
+        <Route path='/home' component={Home}/>
         <Route path='/about' component={About}/>
         <Route path='/default' component={Default}/>
         <Route path='/test' component={Test}/>
@@ -25,7 +26,7 @@ function Routes() {
         <Route path='/map' component={Map}/>
         <Route path='/project/:id' component={Project}/>
         <Route path='/visx' component={Visx}/>
-        <Route path='/template' component={Template}/>
+        <Route path='/splash' component={Splash}/>
         <Route path='/treact' component={TreactPage}/>
         <Route path='/crud' component={Crud}/>
     </Switch>

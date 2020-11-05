@@ -33,7 +33,7 @@ import {NavLink, Link} from 'react-router-dom';
 
 
 
-export default Template;
+export default Splash;
 
 
 
@@ -258,7 +258,7 @@ const { MediaContextProvider, Media } = createMedia({
 
 
 
-function Template(props) {
+function Splash(props) {
 
 
   // function navigate(link){
