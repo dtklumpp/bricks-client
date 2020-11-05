@@ -39,9 +39,9 @@ function Project(props) {
     const [newName, setNewName] = useState("");
     const [newDesc, setNewDesc] = useState("");
 
-    const [oneProject, setOneProject] = useState(null);
+    const [oneProject, setOneProject] = useState({});
 
-    const [activeItem, setActiveItem] = useState('inbox'); 
+    const [activeItem, setActiveItem] = useState(''); 
 
     const [pledge, setPledge] = useState(0);
 
@@ -89,8 +89,6 @@ function Project(props) {
                                 <Comment.Content>
                                     <Comment.Author as='a'>{comment.name}</Comment.Author>
                                     <Comment.Text>{comment.description}</Comment.Text>
-                                    <Comment.Actions>
-                                    </Comment.Actions>
                                 </Comment.Content>
                             </Comment>
                         </Grid.Column>
@@ -175,55 +173,55 @@ function Project(props) {
 
         
         <Grid celled>
-            <Grid.Column width={1}>1</Grid.Column>
+            <Grid.Column width={1}></Grid.Column>
             <Grid.Column width={11}>
-                <h2>9</h2>
-                <Card>
-                    <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                <Card size="huge">
+                    <Image src={oneProject.image} wrapped ui={false} />
                     <Card.Content>
-                    <Card.Header>Matthew</Card.Header>
+                    <Card.Header>{oneProject.name}</Card.Header>
                     <Card.Meta>
-                        <span className='date'>Joined in 2015</span>
+                        <span className='date'>begun in 2020</span>
                     </Card.Meta>
                     <Card.Description>
-                        Matthew is a musician living in Nashville.
+                        {oneProject.description}
                     </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
                     <a>
-                        <Icon name='user' />
-                        22 Friends
+                        <Icon name='globe' />
+                        out of {oneProject.continent}
                     </a>
                     </Card.Content>
                 </Card>
 
                 <Step.Group fluid stackable>
                     <Step>
-                    <Icon name='truck' />
+                    <Icon name='binoculars' />
                     <Step.Content>
-                        <Step.Title>Shipping</Step.Title>
-                        <Step.Description>Choose your shipping options</Step.Description>
-                    </Step.Content>
-                    </Step>
-
-                    <Step active>
-                    <Icon name='payment' />
-                    <Step.Content>
-                        <Step.Title>Billing</Step.Title>
-                        <Step.Description>Enter billing information</Step.Description>
+                        <Step.Title>Attention</Step.Title>
+                        <Step.Description>Review campaign details</Step.Description>
                     </Step.Content>
                     </Step>
 
                     <Step>
-                    <Icon name='info' />
+                    <Icon name='payment' />
                     <Step.Content>
-                        <Step.Title>Confirm Order</Step.Title>
+                        <Step.Title>Decision</Step.Title>
+                        <Step.Description>Enter funding information</Step.Description>
+                    </Step.Content>
+                    </Step>
+
+                    <Step>
+                    <Icon name='fire' />
+                    <Step.Content>
+                        <Step.Title>Action</Step.Title>
+                        <Step.Description>Change the world (if applicable)</Step.Description>
                     </Step.Content>
                     </Step>
                 </Step.Group>
 
-                <button onClick={getComments} className={"ui button"}>comments</button><br/>
-                <button onClick={getProject} className={"ui button"}>project</button><br/>
+                {/* <button onClick={getComments} className={"ui button"}>comments</button><br/> */}
+                {/* <button onClick={getProject} className={"ui button"}>project</button><br/> */}
 
 
                 <Comment.Group>
@@ -238,7 +236,7 @@ function Project(props) {
 
                     <Form reply>
                         <Form.Input
-                            label='Alias'
+                            label='New Comment'
                             placeholder='alias'
                             value={newName}
                             onChange={(e) => setNewName(e.target.value)}
@@ -257,7 +255,7 @@ function Project(props) {
 
 
             <Grid.Column width={4}>
-                <h2>5</h2>
+                <Header>Campaign Metrics:</Header>
 
 
                 <Menu vertical>
@@ -307,13 +305,31 @@ function Project(props) {
                                             value={pledge ? pledge : ""}
                                             onChange={(e) => setPledge(e.target.value)}
                                         />
-
                                         <Form.Input
-                                            icon='payment'
+                                            icon='user'
                                             iconPosition='left'
-                                            label='Credit Card'
-                                            placeholder='CC#'
+                                            label='Email Address'
+                                            placeholder='optional'
                                         />
+
+                                        <Grid columns={2}>
+                                            <Grid.Column>
+                                                <Form.Input
+                                                    icon='payment'
+                                                    iconPosition='left'
+                                                    label='Credit Card'
+                                                    placeholder='CC#'
+                                                />
+                                            </Grid.Column>
+                                            <Grid.Column>
+                                                <Form.Input
+                                                    icon='payment'
+                                                    iconPosition='left'
+                                                    label='security code'
+                                                    placeholder='###'
+                                                />
+                                            </Grid.Column>
+                                        </Grid>
 
                                         <Header>Or..</Header>
 
@@ -322,6 +338,14 @@ function Project(props) {
                                             iconPosition='left'
                                             label='Monero Escrow Address'
                                             value={"888tNkZrPN6JsEgekjMnABU4TBzc2Dt29EPAvkRxbANsAnjyPbb3iQ1YBRk1UXcdRsiKc9dhwMVgN5S9cQUiyoogDavup3H"}
+                                        />
+
+
+                                        <Form.Input
+                                            icon='payment'
+                                            iconPosition='left'
+                                            label='Monero Transaction ID'
+                                            placeholder='include trailng 0s'
                                         />
 
                                         </Form>
@@ -357,8 +381,6 @@ function Project(props) {
 
         </Grid>
     
-        <h3>ahoy</h3>
-        <h3>{props.match.params.id}</h3>
 
 
     </>

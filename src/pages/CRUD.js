@@ -325,7 +325,7 @@ function Crud() {
 
                         <br/>
 
-                        <Button content='Create Revolution' primary onClick={makeIt}/>
+                        <Button content='Create Campaign' primary onClick={makeIt}/>
                     </Form>
                 </Grid.Column>
 
@@ -356,8 +356,8 @@ function Crud() {
                             onChange={(e) => setEditDesc(e.target.value)}
                         />
 
-                        {canEdit ? <Button content='Edit Revolution' className={"orange"} onClick={editIt}/> : ""}
-                        {!canEdit ? <Button content='Edit Revolution' className={"orange"} onClick={editIt} disabled/> : ""}
+                        {canEdit ? <Button content='Edit Campaign' className={"orange"} onClick={editIt}/> : ""}
+                        {!canEdit ? <Button content='Edit Campaign' className={"orange"} onClick={editIt} disabled/> : ""}
                         </Form>
                     </Grid.Column>
             </Grid>
