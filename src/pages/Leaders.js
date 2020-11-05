@@ -118,11 +118,11 @@ function Leaders(props) {
 
 
             <Segment inverted>
-                <Header size="huge">Trending Revolutions</Header>
+                <Header size="huge">Trending Leaders &amp; Revolutions</Header>
 
             </Segment>
 
-                <Carousel autoplay afterChange={onChange}>
+                <Carousel afterChange={onChange}>
                     {rotaryDisplay}
                 </Carousel>
 
