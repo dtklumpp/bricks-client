@@ -16,6 +16,9 @@ import { Label, Menu } from 'semantic-ui-react'
 
 import {Modal} from 'semantic-ui-react';
 
+import {Progress} from 'semantic-ui-react';
+import {Container} from 'semantic-ui-react';
+
 import LineChartSample from '../components/recharts/LineChart';
 
 
@@ -286,7 +289,7 @@ function Project(props) {
                     active={activeItem === 'spam'}
                     onClick={handleItemClick}
                     >
-                    <Label size="big">{oneProject ? (oneProject.funding/oneProject.goal * 100)+"%" : "..."}</Label>
+                    <Label size="big">{oneProject ? (Math.floor(oneProject.funding/oneProject.goal * 100))+"%" : "..."}</Label>
                     Funding
                     </Menu.Item>
 
@@ -384,6 +387,11 @@ function Project(props) {
                         </Modal>
 
                     </Menu.Item>
+                <Container className={"dtk"}>
+                    <Segment>
+                        <Progress color="blue" percent={oneProject.funding/oneProject.goal * 100} size="small"/>
+                    </Segment>
+                </Container>
                 </Menu>
 
 
