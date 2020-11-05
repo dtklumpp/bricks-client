@@ -115,20 +115,25 @@ function Leaders(props) {
             <HeaderBar/>
 
         <Grid>
-            <Grid.Column width={1}>1</Grid.Column>
-            <Grid.Column width={9}>
-                <h2>9</h2>
-                <h2>carousel</h2>
+            <Grid.Column width={1}></Grid.Column>
+            <Grid.Column width={11}>
+
+
+            <Segment inverted>
+                <Header size="huge">Trending Revolutions</Header>
+
+            </Segment>
+
                 <Carousel afterChange={onChange}>
                     {rotaryDisplay}
                 </Carousel>
 
             </Grid.Column>
 
-            <Grid.Column width={5}>
-                <h2>5</h2>
+            <Grid.Column width={3}>
+                <Header>Links:</Header>
 
-                <Menu vertical>
+                <Menu inverted vertical>
                     {projectDisplay}
                 </Menu>
 

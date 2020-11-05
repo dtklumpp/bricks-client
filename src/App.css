@@ -1,5 +1,5 @@
 body {
-    background-color: #34D0EE;
+    background-color: #f1f1f1 !important;
 }
 
 h3.dtk {
@@ -24,3 +24,7 @@ h3.dtk {
     justify-content: center;
 }
 
+.dtk-cover {
+    object-fit: cover;
+    width: 100%;
+}

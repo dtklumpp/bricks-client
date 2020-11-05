@@ -45,10 +45,11 @@ function Cats(props) {
         .then(res => res.json())
         .then(json => {
             console.log('json.data:', json.data);
-            const displayvar = json.data.map(category => {
+            const array = json.data.reverse();
+            const displayvar = array.map(category => {
                 return <Grid.Column key={category.id}>
                     <div onClick={() => filterByCat(category.id)} className={"dtk dtk-tiles"}>
-                        <Image src={category.image ? category.image : 'https://react.semantic-ui.com/images/wireframe/image.png'} fluid/>
+                        <Image src={category.image ? category.image : 'https://react.semantic-ui.com/images/wireframe/image.png'} fluid className={"dtk-cover"}/>
                         {/* <Label attached='bottom left'>CSS</Label> */}
                         <Rail attached internal position='bottom-left'>
                             <Segment inverted size='medium'>
@@ -138,12 +139,24 @@ function Cats(props) {
     return <>
             <HeaderBar/>
 
+
         <Grid>
-            <Grid.Column width={1}>1</Grid.Column>
+
+            
+
+
+            <Grid.Column width={1}></Grid.Column>
 
 
             <Grid.Column width={12}>
-                <h2>12</h2>
+
+            <Segment inverted>
+                <Header size="huge">What Type of Revolution Do You Wish To Fund?</Header>
+
+            </Segment>
+
+
+
 
                 <Grid columns={3}>
                     {categoryDisplay}
@@ -155,9 +168,9 @@ function Cats(props) {
 
 
             <Grid.Column width={2}>
-                <h2>2</h2>
+                <Header>Filtered:</Header>
 
-                <Menu vertical>
+                <Menu inverted vertical>
                     {projectDisplay}
                 </Menu>
 

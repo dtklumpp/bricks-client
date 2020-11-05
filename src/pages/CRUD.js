@@ -253,68 +253,79 @@ function Crud() {
 
 
     <Container>
-        <h3>crud page</h3>        
+        {/* <h3>crud page</h3>        
         <h4>var1 is {var1}</h4>
         <button onClick={increaseVar1} className={"ui button"}>change</button><br/>
         <button onClick={fetchReply} className={"ui button"}>fetchit</button><br/>
         <button onClick={sendIt} className={"ui button"}>sendit</button><br/>
-        <button onClick={getProjects} className={"ui button"}>projects</button><br/>
-        <button onClick={makeIt} className={"ui button"}>create project</button><br/>
+        <button onClick={makeIt} className={"ui button"}>create project</button><br/> */}
 
+            <Segment inverted>
+                <Header size="huge">CRUD a Revolution</Header>
 
-        <br/>
+            </Segment>
+
 
         <Segment placeholder>
             <Grid columns={2} relaxed='very' stackable>
                 <Grid.Column>
-                    <Form>
-                        <Form.Input
-                            icon='user'
-                            iconPosition='left'
-                            label='Project Name'
-                            placeholder='name'
-                            value={newName}
-                            onChange={(e) => setNewName(e.target.value)}
-                        />
-                        <Form.Input
-                            icon='save'
-                            iconPosition='left'
-                            label='Image Link'
-                            placeholder='image'
-                            value={newImage}
-                            onChange={(e) => setNewImage(e.target.value)}
-                        />
-                        <Form.Input
-                            icon='indent'
-                            iconPosition='left'
-                            label='Description'
-                            placeholder='description'
-                            value={newDesc}
-                            onChange={(e) => setNewDesc(e.target.value)}
-                        />
-                        <Form.Input
-                            icon='globe'
-                            iconPosition='left'
-                            label='Continent'
-                            placeholder='continent'
-                            value={newCont}
-                            onChange={(e) => setNewCont(e.target.value)}
-                        />
-                        <Form.Input
-                            icon='bell'
-                            iconPosition='left'
-                            label='Funding Goal $$'
-                            placeholder='goal'
-                            value={newGoal}
-                            onChange={(e) => setNewGoal(e.target.value)}
-                        />
-                        <Form.Input
-                            label='Deadline'
-                        >
-                            <DatePicker />
-                        </Form.Input>
 
-                        <Button content='Create Project' primary onClick={makeIt}/>
+                    <Form>
+                        <Grid columns={2}>
+                            <Grid.Column>
+                                <Form.Input
+                                    icon='user'
+                                    iconPosition='left'
+                                    label='Project Name'
+                                    placeholder='name'
+                                    value={newName}
+                                    onChange={(e) => setNewName(e.target.value)}
+                                />
+                                <Form.Input
+                                    icon='save'
+                                    iconPosition='left'
+                                    label='Image Link'
+                                    placeholder='image'
+                                    value={newImage}
+                                    onChange={(e) => setNewImage(e.target.value)}
+                                />
+                                <Form.Input
+                                    icon='indent'
+                                    iconPosition='left'
+                                    label='Description'
+                                    placeholder='description'
+                                    value={newDesc}
+                                    onChange={(e) => setNewDesc(e.target.value)}
+                                />
+                            </Grid.Column>
+                            <Grid.Column>
+                                <Form.Input
+                                    icon='globe'
+                                    iconPosition='left'
+                                    label='Continent'
+                                    placeholder='continent'
+                                    value={newCont}
+                                    onChange={(e) => setNewCont(e.target.value)}
+                                />
+                                <Form.Input
+                                    icon='bell'
+                                    iconPosition='left'
+                                    label='Funding Goal $$'
+                                    placeholder='goal'
+                                    value={newGoal}
+                                    onChange={(e) => setNewGoal(e.target.value)}
+                                />
+                                <Form.Input
+                                    label='Deadline'
+                                >
+                                    <DatePicker />
+                                </Form.Input>
+                            </Grid.Column>
+                        </Grid>
+
+                        <br/>
+
+                        <Button content='Create Revolution' primary onClick={makeIt}/>
                     </Form>
                 </Grid.Column>
 
@@ -345,8 +356,8 @@ function Crud() {
                             onChange={(e) => setEditDesc(e.target.value)}
                         />
 
-                        {canEdit ? <Button content='Edit Project' className={"orange"} onClick={editIt}/> : ""}
-                        {!canEdit ? <Button content='Edit Project' className={"orange"} onClick={editIt} disabled/> : ""}
+                        {canEdit ? <Button content='Edit Revolution' className={"orange"} onClick={editIt}/> : ""}
+                        {!canEdit ? <Button content='Edit Revolution' className={"orange"} onClick={editIt} disabled/> : ""}
                         </Form>
                     </Grid.Column>
             </Grid>
@@ -354,15 +365,6 @@ function Crud() {
             <Divider vertical>Or</Divider>
         </Segment>
 
-        <br/>
-        <hr/>
-        <br/>
-
-        <h4>fetch1 is {fetch1}</h4>
-
-        <br/>
-        <hr/>
-        <br/>
 
             <Grid centered columns={2}>
                 <Grid.Column>
@@ -373,9 +375,77 @@ function Crud() {
             </Grid>
 
 
+            <br/>
+        <hr/>
+        <br/>
+
+            <button onClick={getProjects} className={"ui button"}>refresh list</button><br/>
+
+
+
         <br/>
         <hr/>
         <br/>
+
+        <Header size="small">sitemap</Header>
+
+        <Grid>
+            <Grid.Column width={1}>
+                <ul>
+                    <li>
+                        <NavLink to='/'>Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/about'>About</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/default'>Default</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/test'>Test</NavLink>
+                    </li>
+                </ul>
+            </Grid.Column>
+            <Grid.Column width={1}>
+                <ul>
+                    <li>
+                        <NavLink to='/cats'>Cats</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/leaders'>Leaders</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/map'>Map</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/project/1'>Project</NavLink>
+                    </li>
+                </ul>
+            </Grid.Column>
+            <Grid.Column width={1}>
+                <ul>
+                    <li>
+                        <NavLink to='/visx'>Visx</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/template'>Template</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/treact'>Treact</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/crud'>Crud</NavLink>
+                    </li>
+                </ul>
+            </Grid.Column>
+
+        </Grid>
+
+
+        <br/>
+        <hr/>
+        <br/>
+
 
     </Container>
         {/* <Grid columns={2} relaxed='very' stackable>

@@ -61,48 +61,48 @@ const DecoratorBlob2 = tw(SvgDotPatternIcon)`absolute top-0 right-0 w-32 h-32 mt
 
 export default ({
   subheading = "",
-  heading = "We love writing.",
+  heading = "Across the Globe.",
   description = "",
   posts = [
     {
       postImageSrc:
-        "https://images.unsplash.com/photo-1563784462041-5f97ac9523dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1024&q=80",
+        "https://images.unsplash.com/photo-1603965478176-fda8128aeca0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
       authorImageSrc:
-        "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.95&w=512&h=512&q=80",
-      title: "Enjoying the beach life while on a vacation",
+        "https://p2.piqsels.com/preview/634/510/359/myanmar-bagan-buddhism-monk.jpg",
+      title: "Liberate cattle in Northern Nepal",
       description:
         "Lorem ipsum dolor sit amet, consecteturious adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua now ele.",
-      authorName: "Adam Cuppy",
-      authorProfile: "Vlogger",
+      authorName: "Gelong Thubten",
+      authorProfile: "Monk",
       url: "https://reddit.com",
       featured: true
     },
     {
       postImageSrc:
-        "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80",
-      title: "Getting the most out of your vacation",
-      authorName: "Aaron Patterson",
+        "https://images.unsplash.com/photo-1603901286856-a7f2410a1f21?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2034&q=80",
+      title: "Build Bridges in Singapore",
+      authorName: "Hawk Harris",
       url: "https://reddit.com"
     },
     {
       postImageSrc:
-        "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80",
-      title: "Choosing the perfect Safaris in Africa",
-      authorName: "Sam Phipphen",
+        "https://images.unsplash.com/photo-1604005485421-2fd97945ec40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80",
+      title: "Storm the Deserts in the Gobi",
+      authorName: "Tranh Nguyen",
       url: "https://reddit.com"
     },
     {
       postImageSrc:
-        "https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80",
-      title: "Hiking during the monsoon in Asia",
-      authorName: "Tony Hawk",
+        "https://images.unsplash.com/photo-1603999129694-f814a13377ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80",
+      title: "Find Roger Moore on the Moors",
+      authorName: "(he's missing)",
       url: "https://timerse.com"
     },
     {
       postImageSrc:
-        "https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80",
-      title: "Must carry items while travelling to Thailand",
-      authorName: "Himali Turn",
+        "https://images.unsplash.com/photo-1604048774551-ff9622fecfde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+      title: "Defy the rise of Cthulhu from his Ocean Depths",
+      authorName: "Howard Phillips Lovecraft",
       url: "https://timerse.com"
     }
   ]
@@ -134,8 +134,6 @@ export default ({
               </Post>
             </PostContainer>
           ))}
-          <DecoratorBlob1 />
-          <DecoratorBlob2 />
         </Posts>
       </ContentWithPaddingXl>
     </Container>

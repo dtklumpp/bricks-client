@@ -29,10 +29,13 @@ import Footer from "components/footers/FiveColumnDark";
 import AccordianFluid from '../components/AccordianFluid';
 import SimpleSubscribe from 'components/forms/SimpleSubscribeNewsletter';
 
+import {NavLink, Link} from 'react-router-dom';
 
 
 
 export default Template;
+
+
 
 
 const { MediaContextProvider, Media } = createMedia({
@@ -70,10 +73,12 @@ const { MediaContextProvider, Media } = createMedia({
           marginTop: mobile ? '0.5em' : '1.5em',
         }}
       />
+      <NavLink to='/cats'>
       <Button primary size='huge'>
         Begin
         <Icon name='right arrow' />
       </Button>
+      </NavLink>
     </Container>
   )
   
@@ -119,16 +124,18 @@ const { MediaContextProvider, Media } = createMedia({
                   <Menu.Item as='a' active>
                     Intro
                   </Menu.Item>
-                  <Menu.Item as='a'>Genres</Menu.Item>
-                  <Menu.Item as='a'>Leaders</Menu.Item>
-                  <Menu.Item as='a'>Continents</Menu.Item>
+                  <Menu.Item as='a'><NavLink to='/cats'>Genres</NavLink></Menu.Item>
+                  <Menu.Item as='a'><NavLink to='/leaders'>Leaders</NavLink></Menu.Item>
+                  <Menu.Item as='a'><NavLink to='/map'>Continents</NavLink></Menu.Item>
                   <Menu.Item position='right'>
                     <Button as='a' inverted={!fixed}>
                       Media Kit
                     </Button>
+
                     <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
-                      Admin
+                      <NavLink to='/crud'>Admin</NavLink>
                     </Button>
+                    
                   </Menu.Item>
                 </Container>
               </Menu>
@@ -141,6 +148,7 @@ const { MediaContextProvider, Media } = createMedia({
       )
     }
   }
+
   
   DesktopContainer.propTypes = {
     children: PropTypes.node,
@@ -250,7 +258,14 @@ const { MediaContextProvider, Media } = createMedia({
 
 
 
-function Template() {
+function Template(props) {
+
+
+  // function navigate(link){
+  //   props.history.push('/'+link);
+  // }
+
+
     return   <ResponsiveContainer>
 
 
@@ -259,93 +274,100 @@ function Template() {
 <br/>
 <hr/>
 <br/>
-
+<br/>
+<br/>
+        <Grid columns={3}>
+          <Grid.Column>
             <Header as='h2' icon>
-                <Icon name='settings' />
-                Account Settings
+                <Icon name='globe' />
+                Search Database
                 <Header.Subheader>
-                Manage your account settings and set e-mail preferences.
+                Identify promising revolutionaries who meet your ideological and geographic profile.
                 </Header.Subheader>
             </Header>
 
+          </Grid.Column>
+          <Grid.Column>
+            <Header as='h2' icon>
+                <Icon name='fire' />
+                Pledge Funding
+                <Header.Subheader>
+                Browse funding goals, deadlines, and details and select a project.
+                </Header.Subheader>
+            </Header>
 
+          </Grid.Column>
+          <Grid.Column>
+            <Header as='h2' icon>
+                <Icon name='settings' />
+                Wait and Watch
+                <Header.Subheader>
+                When pledge goals are met, we charge every credit card and set the gears in motion.
+                </Header.Subheader>
+            </Header>
+
+          </Grid.Column>
+
+        </Grid>
+
+
+<br/>
+<br/>
 <br/>
 <hr/>
 <br/>
 
 
             <Menu attached='top' compact inverted widths={3}>
-                <Menu.Item as='a'>Item</Menu.Item>
-                <Menu.Item as='a'>Item</Menu.Item>
-                <Menu.Item as='a'>Item</Menu.Item>
+                <Menu.Item as='a'></Menu.Item>
+                <Menu.Item as='a'></Menu.Item>
+                <Menu.Item as='a'></Menu.Item>
             </Menu>
             <Table attached inverted>
                 <Table.Header>
-                <Table.HeaderCell>Header</Table.HeaderCell>
-                <Table.HeaderCell>Header</Table.HeaderCell>
-                <Table.HeaderCell>Header</Table.HeaderCell>
+                <Table.HeaderCell>Continent</Table.HeaderCell>
+                <Table.HeaderCell>Pending Movements</Table.HeaderCell>
+                <Table.HeaderCell>Backers</Table.HeaderCell>
                 </Table.Header>
                 <Table.Body>
                 <Table.Row>
-                    <Table.Cell>Cell</Table.Cell>
-                    <Table.Cell>Cell</Table.Cell>
-                    <Table.Cell>Cell</Table.Cell>
+                    <Table.Cell>North America</Table.Cell>
+                    <Table.Cell>18</Table.Cell>
+                    <Table.Cell>152</Table.Cell>
                 </Table.Row>
                 <Table.Row>
-                    <Table.Cell>Cell</Table.Cell>
-                    <Table.Cell>Cell</Table.Cell>
-                    <Table.Cell>Cell</Table.Cell>
+                    <Table.Cell>Africa</Table.Cell>
+                    <Table.Cell>37</Table.Cell>
+                    <Table.Cell>339</Table.Cell>
                 </Table.Row>
                 <Table.Row>
-                    <Table.Cell>Cell</Table.Cell>
-                    <Table.Cell>Cell</Table.Cell>
-                    <Table.Cell>Cell</Table.Cell>
+                    <Table.Cell>Asia</Table.Cell>
+                    <Table.Cell>143</Table.Cell>
+                    <Table.Cell>912</Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                    <Table.Cell>Europe</Table.Cell>
+                    <Table.Cell>25</Table.Cell>
+                    <Table.Cell>310</Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                    <Table.Cell>South America</Table.Cell>
+                    <Table.Cell>1037</Table.Cell>
+                    <Table.Cell>10,048</Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                    <Table.Cell>Australia</Table.Cell>
+                    <Table.Cell>1</Table.Cell>
+                    <Table.Cell>0</Table.Cell>
                 </Table.Row>
                 </Table.Body>
             </Table>
             <Segment attached='bottom' inverted>
-                Segment
             </Segment>
-
-            <br/>
-            <hr/>
-            <br/>
-
-
-
-            <br/>
-            <hr/>
-            <br/>
 
             <GridFeatured/>
 
-            <br/>
-            <hr/>
-            <br/>
 
-            <SimpleSubscribe/>
-
-
-<br/>
-<hr/>
-<br/>
-
-            <AccordianFluid/>
-
-
-<br/>
-<hr/>
-<br/>
-
-<Footer/>
-
-
-<br/>
-<hr/>
-<br/>
-
-
-  
     <Segment inverted vertical style={{ padding: '5em 0em' }}>
       <Container>
         <Grid divided inverted stackable>
@@ -355,30 +377,33 @@ function Template() {
               <List link inverted>
                 <List.Item as='a'>Sitemap</List.Item>
                 <List.Item as='a'>Contact Us</List.Item>
-                <List.Item as='a'>Religious Ceremonies</List.Item>
-                <List.Item as='a'>Gazebo Plans</List.Item>
+                <List.Item as='a'>Pagan Rites</List.Item>
+                <List.Item as='a'>Sales</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header inverted as='h4' content='Services' />
+              <Header inverted as='h4' content='Legal' />
               <List link inverted>
-                <List.Item as='a'>Banana Pre-Order</List.Item>
-                <List.Item as='a'>DNA FAQ</List.Item>
-                <List.Item as='a'>How To Access</List.Item>
-                <List.Item as='a'>Favorite X-Men</List.Item>
+                <List.Item as='a'>FAQs</List.Item>
+                <List.Item as='a'>Terms of Service</List.Item>
+                <List.Item as='a'>GPDR</List.Item>
+                <List.Item as='a'>Disclaimer</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
               <Header as='h4' inverted>
-                Footer Header
+                Contact
               </Header>
               <p>
-                Extra space for a call to action inside the footer that could help re-engage users.
+                dtklumpp@gmail.com
               </p>
             </Grid.Column>
           </Grid.Row>
         </Grid>
       </Container>
     </Segment>
+
+
+  
   </ResponsiveContainer>
 }

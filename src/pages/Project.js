@@ -17,6 +17,9 @@ import MenuVertical from '../components/MenuVertical';
 
 import {Modal} from 'semantic-ui-react';
 
+import {NavLink} from 'react-router-dom';
+
+
 
 export default Project;
 
