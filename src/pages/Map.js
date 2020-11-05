@@ -46,7 +46,7 @@ function Map(props) {
 
     const [contList, setContList] = useState(['first']);
 
-    const [continent, setContinent] = useState(['Continent'])
+    const [continent, setContinent] = useState(['North America'])
 
     function handleItemClick(e, {name}){
         setActiveItem(name);
@@ -55,7 +55,7 @@ function Map(props) {
 
 
     useEffect(function(){
-        getProjects();
+        filterProjects(continent);
     }, [])
 
 

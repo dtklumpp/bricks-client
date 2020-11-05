@@ -368,7 +368,7 @@ function Crud() {
 
             <Grid centered columns={2}>
                 <Grid.Column>
-                    <Header as="h2">My Projects:</Header>
+                    <Header as="h2">My Campaigns:</Header>
                     {projectDisplay}
                 </Grid.Column>
                 <Grid.Column/>

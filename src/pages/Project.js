@@ -175,24 +175,32 @@ function Project(props) {
         <Grid celled>
             <Grid.Column width={1}></Grid.Column>
             <Grid.Column width={11}>
-                <Card size="huge">
-                    <Image src={oneProject.image} wrapped ui={false} />
-                    <Card.Content>
-                    <Card.Header>{oneProject.name}</Card.Header>
-                    <Card.Meta>
-                        <span className='date'>begun in 2020</span>
-                    </Card.Meta>
-                    <Card.Description>
-                        {oneProject.description}
-                    </Card.Description>
-                    </Card.Content>
-                    <Card.Content extra>
-                    <a>
-                        <Icon name='globe' />
-                        out of {oneProject.continent}
-                    </a>
-                    </Card.Content>
-                </Card>
+                <Grid>
+                    <Grid.Column width={10}>
+                        <Card fluid>
+                            <Image src={oneProject.image} wrapped ui={false} />
+                            <Card.Content>
+                            <Card.Header>{oneProject.name}</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>begun in 2020</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                {oneProject.description}
+                            </Card.Description>
+                            </Card.Content>
+                            <Card.Content extra>
+                            <a>
+                                <Icon name='globe' />
+                                out of {oneProject.continent}
+                            </a>
+                            </Card.Content>
+                        </Card>
+                    </Grid.Column>
+                    <Grid.Column width={5}>
+                    </Grid.Column>
+
+
+                </Grid>
 
                 <Step.Group fluid stackable>
                     <Step>
