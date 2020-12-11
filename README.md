@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# group d'etat
+groupon for revolutions / kickstarter for social change
+- An app for funding social movements that allows organizers to create projects with funding goals, and allows members to commit to funding projects assuming their pledge goal is hit.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## mvp features
+- allow user and organizer signup
+- allow project creation and CRUD
+- allow funding of projects
+- allow user viewering / perusal of projects
 
-### `npm start`
+## stretch goals
+- comments
+- project metrics
+- tiled "pick your interests" page
+- project map
+- trending projects flow
+- flashy project-leader view
+- virtual account creation pre-signup
+- actual Stripe integration (rather than just "pledge")
+- users / top investors view
+- as always, drag-and-drop (who cares of what)
+- see friends' projects
+- text / email users when funding goes through
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## user stories
+- user logs on, sees themed splash page
+- user clicks through to list of top projects
+- user clicks through to project view
+- {user can select project categories of interest}
+- user can see funding metrics and decide whether to fund
+- user view dashboard of projects, etc
+- on trying to fund, user prompted for simple account creation
+- {stretch: user enter actual card info (only for real-world production)}
+- user can log out
+- organizer user account can CRUD projects
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## milestones
+- Mon-Tue: basic backend
+- Wed-Thu: basic frontend
+- Fri-Sat: advanced backend
+- Sun-Mon: advanced frontend
+- Tue-Wed: stretch goals
+- Thu: deploy and prep presentation
 
-### `npm test`
+## models and properties
+1. User
+    - name
+    - image
+    - email
+    - auth creds
+    - organizer (boolean)
+    - funded projects (relation)
+    - matched categories (relation)
+    - isOrganizer (boolean)
+    - friends (user relation)
+    - Stripe info (stretch goal)
+2. Project
+    - name
+    - image
+    - organizer (user relation)
+    - funding goal
+    - deadline date
+3. Pledge
+    - amount
+    - date
+    - user (relation)
+    - project (relation)
+    - Stripe info (stretch goal)
+4. Category
+    - name
+    - image
+    - has_many: projects
+    - description
+5. Comments (stretch goal)
+    - user (relation)
+    - project (relation)
+    - text
+    - datetime
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## technologies to include
+- React (or jQuery??  help!)
+- Django (or Flask?) (or Express??  help!)
+- PostgreSQL (or Mongo??  help!)
+- JWT (probably)
+- boatload of APIs
+- Bootstrap
+- AntDesign or Material-UI components
+- deploy: Heroku or AWS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## wireframes
+-see wireframe doc
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ERDs
+-see ERDs doc
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Feasibility
+- main challenge a.t.m. to decide on the stack
