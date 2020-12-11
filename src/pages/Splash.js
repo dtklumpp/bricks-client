@@ -128,7 +128,7 @@ const { MediaContextProvider, Media } = createMedia({
                     </Button>
 
                     <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
-                      <NavLink to='/crud'>Admin</NavLink>
+                      <NavLink to='/crud' className="dtk-white">Admin</NavLink>
                     </Button>
                     
                   </Menu.Item>
@@ -289,7 +289,7 @@ function Splash(props) {
                 <Icon name='fire' />
                 Pledge Funding
                 <Header.Subheader>
-                Browse funding goals, deadlines, and details and select a project.
+                Browse funding goals, deadlines, and details and select a campaign to light a spark.
                 </Header.Subheader>
             </Header>
 
@@ -299,7 +299,7 @@ function Splash(props) {
                 <Icon name='settings' />
                 Wait and Watch
                 <Header.Subheader>
-                When pledge goals are met, we charge every credit card and set the gears in motion.
+                When pledge goals are met, we charge every payment method and set the gears in motion.
                 </Header.Subheader>
             </Header>
 
@@ -323,7 +323,7 @@ function Splash(props) {
             <Table attached inverted>
                 <Table.Header>
                 <Table.HeaderCell>Continent</Table.HeaderCell>
-                <Table.HeaderCell>Pending Movements</Table.HeaderCell>
+                <Table.HeaderCell>Pending Campaigns</Table.HeaderCell>
                 <Table.HeaderCell>Backers</Table.HeaderCell>
                 </Table.Header>
                 <Table.Body>

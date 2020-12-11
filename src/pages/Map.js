@@ -10,6 +10,8 @@ import {Menu, Label} from 'semantic-ui-react';
 
 import {Segment, Header} from 'semantic-ui-react';
 
+import {Form} from 'semantic-ui-react';
+
 // import Example from '../components/visx/Example.tsx';
 import Map2 from '../components/visx/Map2.tsx';
 
@@ -46,6 +48,8 @@ function Map(props) {
     const [contList, setContList] = useState(['first']);
 
     const [continent, setContinent] = useState(['North America'])
+
+    const [duration, setDuration] = useState([100])
 
     function handleItemClick(e, {name}){
         setActiveItem(name);
@@ -148,6 +152,9 @@ function Map(props) {
         console.log('contList:', contList, [str]);
     }
 
+    const handleChange = (e, { name, value }) => setDuration(value);
+
+
 
 
     return <>
@@ -168,7 +175,7 @@ function Map(props) {
 
             </Segment>
 
-                <Map2 width={1150} height={550} events={true} filter={filterProjects} add={appendContList}/>
+                <Map2 width={1150*duration/100} height={550*duration/100} events={true} filter={filterProjects} add={appendContList}/>
                 {/* <Example width={1000} height={500} events={true} filter={filterProjects}/> */}
 
                 {/* <GeoCustom/> */}
@@ -181,6 +188,18 @@ function Map(props) {
                 <Menu inverted vertical>
                     {projectDisplay}
                 </Menu>
+
+
+            <Form.Input
+                label={`Map Size: ${duration}px `}
+                min={50}
+                max={250}
+                name='duration'
+                onChange={handleChange}
+                step={5}
+                type='range'
+                value={duration}
+            />
                 
             </Grid.Column>
 

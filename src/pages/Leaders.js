@@ -34,7 +34,7 @@ function onChange(a, b, c) {
 
 function Leaders(props) {
 
-    const URL = "http://localhost:8000/projects/truncate/5"
+    const URL = "http://localhost:8000/projects/truncate/12"
 
     const [projectDisplay, setProjectDisplay] = useState("");
     const [rotaryDisplay, setRotaryDisplay] = useState("");
@@ -118,7 +118,7 @@ function Leaders(props) {
 
 
             <Segment inverted>
-                <Header size="huge">Trending Revolutions</Header>
+                <Header size="huge">Trending Leaders &amp; Revolutions</Header>
 
             </Segment>
 

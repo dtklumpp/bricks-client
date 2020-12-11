@@ -28,3 +28,7 @@ h3.dtk {
     object-fit: cover;
     width: 100%;
 }
+
+.dtk-white {
+    color: white !important;
+}
