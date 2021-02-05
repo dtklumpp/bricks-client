@@ -4,7 +4,7 @@
 
 A site for crowdfunding social movements.  Users identify promising young visionaries, and browse funding goals, deadlines, and details to select a campaign.  As in groupon or kickstarter, when a pledge goal is met, all payments are made simultaneously.
 
-This repo contains the client-side React app; API in Django found [here](https://github.com/dtklumpp/bricks-api)
+This repo contains the client-side React app; for the API in Django, look [here](https://github.com/dtklumpp/bricks-api)
 
 ## Contents
 
