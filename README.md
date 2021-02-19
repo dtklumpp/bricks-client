@@ -1,8 +1,10 @@
-# Spare Change
+# Brickstarter
 
 ## About
 
 A site for crowdfunding social movements.  Users identify promising young visionaries, and browse funding goals, deadlines, and details to select a campaign.  As in groupon or kickstarter, when a pledge goal is met, all payments are made simultaneously.
+
+People are hankering for a way to get involved to a meaninful extent in real social change; but too many feel at the moment like there's no way to make a difference, or that their individual effort alone won't count.  This is an attempt to get around that problem.
 
 This repo contains the client-side React app; for the API in Django, look [here](https://github.com/dtklumpp/bricks-api)
 
@@ -134,7 +136,7 @@ To help with a bug or add functionality, do this:
 MIT ©
 
 ## Notes
-This idea has gone through several iterations throughout the years, and more than a few changes of name (Crowd-Thunder, anyone?  brickstarter??).  Concerns about mis-use, as well as general lack of time on my part, have so far stalled its launch as a full-on business.  However, if you're interested in helping me get this off the ground for real, please shoot me a message!
+This idea has gone through several iterations throughout the years, and more than a few changes of name (Crowd-Thunder, anyone?  Spare Chagne??).  Concerns about mis-use, as well as general lack of time on my part, have so far stalled its launch as a full-on business.  However, if you're interested in helping me get this off the ground for real, please shoot me a message!
 
 ---
 ---
