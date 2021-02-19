@@ -136,7 +136,7 @@ To help with a bug or add functionality, do this:
 MIT ©
 
 ## Notes
-This idea has gone through several iterations throughout the years, and more than a few changes of name (Crowd-Thunder, anyone?  Spare Chagne??).  Concerns about mis-use, as well as general lack of time on my part, have so far stalled its launch as a full-on business.  However, if you're interested in helping me get this off the ground for real, please shoot me a message!
+This idea has gone through several iterations throughout the years, and more than a few changes of name (Crowd-Thunder, anyone?  Spare Change??).  Concerns about mis-use, as well as general lack of time on my part, have so far stalled its launch as a full-on business.  However, if you're interested in helping me get this off the ground for real, please shoot me a message!
 
 ---
 ---
