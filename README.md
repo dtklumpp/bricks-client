@@ -12,7 +12,7 @@ This repo contains the client-side React app; for the API in Django, look [here]
 
 ![Screen Shot 2021-02-05 at 2 26 22 PM](https://user-images.githubusercontent.com/65556316/107082873-d0d70180-67c2-11eb-9f24-f68daac98282.png)
 
-![Screen Shot 2021-02-05 at 2 26 42 PM](https://user-images.githubusercontent.com/65556316/107082878-d3395b80-67c2-11eb-92e9-e83f7e693fd6.png)
+![Screen Shot 2021-02-05 at 2 26 07 PM](https://user-images.githubusercontent.com/65556316/107082912-daf90000-67c2-11eb-9f41-3e864532d4ce.png)
 
 
 
