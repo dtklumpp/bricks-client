@@ -8,6 +8,14 @@ People are hankering for a way to get involved to a meaninful extent in real soc
 
 This repo contains the client-side React app; for the API in Django, look [here](https://github.com/dtklumpp/bricks-api)
 
+## examples-of-use
+
+![Screen Shot 2021-02-05 at 2 26 17 PM](https://user-images.githubusercontent.com/65556316/107082864-cd437a80-67c2-11eb-9d9a-5541ef75d81f.png)
+
+![Screen Shot 2021-02-05 at 2 26 22 PM](https://user-images.githubusercontent.com/65556316/107082873-d0d70180-67c2-11eb-9f24-f68daac98282.png)
+
+
+
 ## Contents
 
   1. [Requirements](#Requirements)
@@ -16,7 +24,7 @@ This repo contains the client-side React app; for the API in Django, look [here]
   1. [Roadmap](#Roadmap)
   1. [Development](#Development)
   1. [License](#License)
-  1. [Examples of Use](#Examples-of-Use)
+  1. [Screenshots](#Screenshots)
 
 
 ## Requirements
